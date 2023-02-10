@@ -23,6 +23,7 @@ module.exports = {
         "i18next"
     ],
     "rules": {
-        "i18next/no-literal-string": ['error', {markupOnly: true}]
+        "i18next/no-literal-string": ['error', {markupOnly: true}],
+        "max-len": ['error', {ignoreComments: true, "code": 100}]
     }
 }
