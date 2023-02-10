@@ -7,7 +7,8 @@ module.exports = {
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:react/jsx-runtime"
+        "plugin:react/jsx-runtime",
+        "plugin:i18next/recommended"
     ],
     "overrides": [
     ],
@@ -18,8 +19,10 @@ module.exports = {
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "i18next"
     ],
     "rules": {
+        "i18next/no-literal-string": ['error', {markupOnly: true}]
     }
 }
