@@ -35,7 +35,7 @@ jobs:
         id: screenshots
         run: npm run test:ui:ci
       - name: after
-        if: ${{ failure() $$ steps.screenshots.conclusion == 'failure'}}
+        if: ${{ failure() && steps.screenshots.conclusion == 'failure'}}
         run: /
           date > generated.txt
           git config user.name github-actions
