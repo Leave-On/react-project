@@ -13,7 +13,7 @@ jobs:
         node-version: [ 17.x ]
     permissions: 
       contents: write
-      pull-requsts: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}
