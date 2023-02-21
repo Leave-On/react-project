@@ -15,7 +15,7 @@
 "",
 "import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'",
 "import { Theme } from 'app/providers/ThemeProvider'",
-"import ${TM_FILENAME/(.*)\\..+$/$1/}  from './${TM_FILENAME_BASE}';",
+"import ${TM_FILENAME/^.*(?=(\\.stories))//gi}  from './${TM_FILENAME_BASE}';",
 "",
 "export default {",
 	"\ttitle: '${1:pages}/${TM_FILENAME_BASE},",
