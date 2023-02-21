@@ -41,6 +41,6 @@ module.exports = {
         "max-len": ['error', { ignoreComments: true, "code": 100 }],
         "object-curly-spacing": [ 'error', 'always' ],
         "react/display-name": ['off'],
-        "@typescript-eslint/ban-ts-comment": "warning"
+        "@typescript-eslint/ban-ts-comment": "warn"
     }
 }
