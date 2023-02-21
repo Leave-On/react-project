@@ -1,7 +1,8 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "node": true
     },
     "extends": [
         "eslint:recommended",
@@ -11,6 +12,13 @@ module.exports = {
         "plugin:i18next/recommended"
     ],
     "overrides": [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                "i18next/no-literal-string": 'off',
+            }
+            
+        }
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -23,7 +31,15 @@ module.exports = {
         "i18next"
     ],
     "rules": {
-        "i18next/no-literal-string": ['error', {markupOnly: true}],
-        "max-len": ['error', {ignoreComments: true, "code": 100}]
+        "i18next/no-literal-string": [
+            'error', 
+            {
+                markupOnly: true, 
+                ignoreAttribute: ['data-tetid', 'to']
+            }
+        ],
+        "max-len": ['error', { ignoreComments: true, "code": 100 }],
+        "object-curly-spacing": [ 'error', 'always' ],
+        "react/display-name": ['off']
     }
 }

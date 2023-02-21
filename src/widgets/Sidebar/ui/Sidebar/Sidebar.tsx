@@ -7,7 +7,7 @@ import cls from './Sidebar.module.scss'
 interface SidebarProps {
   className?: string;
 }
-export const Sidebar = ({className}: SidebarProps) => {
+export const Sidebar = ({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false)
   const onToggle = () => {
     setCollapsed(prev => !prev)
@@ -16,13 +16,14 @@ export const Sidebar = ({className}: SidebarProps) => {
   return (
     <div 
     data-testid='sidebar'
-    className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}
+    className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
     >
       <button 
       data-testid='sidebar-toggle' 
       onClick={onToggle} 
+      // eslint-disable-next-line i18next/no-literal-string
       >
-        toggle
+        toggle 
       </button>
       <div className={cls.switchers}>
         <ThemeSwitcher/>

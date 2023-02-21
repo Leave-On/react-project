@@ -1,4 +1,4 @@
-import {render, screen} from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { Button, ThemeButton } from "./Button";
 
 
@@ -13,4 +13,5 @@ describe('Button', () => {
     render(<Button>TEST</Button>);
     expect(screen.getByText('TEST')).toBeInTheDocument()
   })
+
 })

@@ -7,8 +7,8 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 interface ThemeSwitcherProps {
   className?: string;
 }
-export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
-  const {theme, toggleTheme } = useTheme()
+export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
+  const { theme, toggleTheme } = useTheme()
   return (
     <Button
     theme={ThemeButton.CLEAR}

@@ -17,7 +17,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
   }
 
   static getDerivedStateFromError(error: Error) {   
-    return {hasError: true}
+    return { hasError: true }
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) { 
@@ -25,8 +25,8 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
   }   
 
   render() {
-    const {hasError} = this.state
-    const {children} = this.props
+    const { hasError } = this.state
+    const { children } = this.props
     if (hasError) {  
       return (
             <Suspense fallback={""}>
