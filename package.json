@@ -81,12 +81,14 @@
   "dependencies": {
     "-": "^0.0.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
+    "@reduxjs/toolkit": "^1.9.3",
     "i18next": "^22.4.9",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^12.1.5",
+    "react-redux": "^8.0.5",
     "react-refresh": "^0.14.0",
     "react-router-dom": "^6.2.1",
     "type-fest": "^3.5.7"

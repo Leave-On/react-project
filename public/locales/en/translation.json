@@ -5,5 +5,7 @@
   "Язык": "Русский",
   "Короткий язык": "РУ",
   "Страница не найдена": "Not found",
-  "Войти": "Log in"
+  "Войти": "Log in",
+  "increment": "Increment",
+  "decrement": "Decrement"
 }

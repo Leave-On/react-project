@@ -27,31 +27,13 @@
 "",
 "const Template: ComponentStory<typeof ${TM_FILENAME_BASE}> = (args) => <${TM_FILENAME_BASE} {...args as object} />;",
 "",
-"export const Light = Template.bind({});",
-"Light.args = {};",
+"export const Primary = Template.bind({});",
+"Primary.args = {};",
 "",
-
 "export const Dark = Template.bind({});",
 "Dark.args = {};",
 "Dark.decorators = [ThemeDecorator(Theme.DARK)]",
 
-
-
-"import { classNames } from 'shared/lib/classNames/classNames';",
-"import cls from './$TM_FILENAME_BASE.module.scss'",
-"",
-"interface ${TM_FILENAME_BASE}Props {",
-"  className?: string;",
-
-"}",
-"",
-"export const $TM_FILENAME_BASE = ({className}: ${TM_FILENAME_BASE}Props) => {",
-" \treturn (",
-"    <div className={classNames(cls.$TM_FILENAME_BASE, {}, [className])}>",
-"\t\t\t${1}",
-"    </div>",
-"  );",
-"}"
 		],
 		"description": "Create react component"
 	}

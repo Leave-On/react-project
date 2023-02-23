@@ -60,10 +60,6 @@ export const Sidebar = ({ className }: SidebarProps) => {
             
           </AppLink>
           </div>
-
-
-
-
       </div>
       <div className={cls.switchers}>
         <ThemeSwitcher/>
