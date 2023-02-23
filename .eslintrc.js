@@ -13,9 +13,10 @@ module.exports = {
     ],
     "overrides": [
         {
-            files: ['**/src/**/*.test.{ts,tsx}'],
+            files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
             rules: {
                 "i18next/no-literal-string": 'off',
+                "max-len": 'off'
             }
             
         }
@@ -28,7 +29,8 @@ module.exports = {
     "plugins": [
         "react",
         "@typescript-eslint",
-        "i18next"
+        "i18next",
+        "react-hooks"
     ],
     "rules": {
         "i18next/no-literal-string": [
@@ -41,6 +43,8 @@ module.exports = {
         "max-len": ['error', { ignoreComments: true, "code": 100 }],
         "object-curly-spacing": [ 'error', 'always' ],
         "react/display-name": ['off'],
-        "@typescript-eslint/ban-ts-comment": "warn"
+        "@typescript-eslint/ban-ts-comment": "warn",
+        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+        "react-hooks/exhaustive-deps": "error" // Checks effect dependencies
     }
 }
