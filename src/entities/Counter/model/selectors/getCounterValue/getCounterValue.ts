@@ -3,6 +3,6 @@ import { CounterScheme } from "../../types/counterScheme";
 import { getCounter } from "../getCounter/getCounter";
 
 export const getCounterValue = createSelector(
-  getCounter,
-  (counter: CounterScheme) => counter.value
+    getCounter,
+    (counter: CounterScheme) => counter.value
 )

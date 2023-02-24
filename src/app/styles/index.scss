@@ -4,9 +4,9 @@
 @import "themes/dark";
 
 body {
+    font-family: var(--font-family-main);
     font-size: var(--font-m);
     color: var(--primary-color);
-    font-family: var(--font-family-main);
 }
 
 .app {

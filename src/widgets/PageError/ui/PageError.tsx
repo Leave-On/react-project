@@ -8,16 +8,16 @@ interface PageErrorProps {
 }
 
 export const PageError = ({ className }: PageErrorProps) => {
-  const { t } = useTranslation()
-  const reloadPage = () => {
-    location.reload()
-  }
-  return (
-    <div className={classNames(cls.PageError, {}, [className])}>
-      <p>{t('Что-то пошло не так')}</p>
-      <Button onClick={reloadPage}>
-        {t('Обновить страницу')}
-      </Button>
-    </div>
-  );
+    const { t } = useTranslation()
+    const reloadPage = () => {
+        location.reload()
+    }
+    return (
+        <div className={classNames(cls.PageError, {}, [className])}>
+            <p>{t('Что-то пошло не так')}</p>
+            <Button onClick={reloadPage}>
+                {t('Обновить страницу')}
+            </Button>
+        </div>
+    );
 }

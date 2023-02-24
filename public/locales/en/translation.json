@@ -7,5 +7,9 @@
   "Страница не найдена": "Not found",
   "Войти": "Log in",
   "increment": "Increment",
-  "decrement": "Decrement"
+  "decrement": "Decrement",
+  "Enter": "Enter",
+  "Enter name": "Enter name",
+  "Enter password": "Enter password",
+  "toggle": "Toggle"
 }
