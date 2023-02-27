@@ -11,5 +11,8 @@
   "toggle": "Переключить",
   "Enter": "Войти",
   "Enter name": "Введите имя",
-  "Enter password": "Введите пароль"
+  "Enter password": "Введите пароль",
+  "Auth from": "Форма авторизации",
+  "Wrong Login or password": "Неверный логин или пароль",
+  "Quit": "Выйти"
 }

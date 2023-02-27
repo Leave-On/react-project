@@ -8,8 +8,11 @@
   "Войти": "Log in",
   "increment": "Increment",
   "decrement": "Decrement",
-  "Enter": "Enter",
+  "Enter": "Login",
   "Enter name": "Enter name",
   "Enter password": "Enter password",
-  "toggle": "Toggle"
+  "toggle": "Toggle",
+  "Auth from": "Auth form",
+  "Wrong Login or password": "Wrong Login or password",
+  "Quit": "Quit"
 }

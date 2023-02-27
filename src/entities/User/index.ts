@@ -1,9 +1,13 @@
-export { 
-    userReducer, 
-    userActions 
+export {
+    getUserAuthData
+} from './model/selectors/getUserAuthData/getUserAuthData'
+
+export {
+    userReducer,
+    userActions
 } from './model/slice/userSlice'
 
-export { 
-    User, 
-    UserScheme 
+export {
+    User,
+    UserScheme
 } from './model/types/user'
