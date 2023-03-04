@@ -18,7 +18,7 @@ module.exports = {
                 "i18next/no-literal-string": 'off',
                 "max-len": 'off'
             }
-            
+
         }
     ],
     "parser": "@typescript-eslint/parser",
@@ -34,13 +34,13 @@ module.exports = {
     ],
     "rules": {
         "i18next/no-literal-string": [
-            'error', 
+            'error',
             {
-                markupOnly: true, 
+                markupOnly: true,
                 ignoreAttribute: ['data-tetid', 'to']
             }
         ],
-        "max-len": ['error', { ignoreComments: true, "code": 100 }],
+        "max-len": ['error', { ignoreComments: true, "code": 120 }],
         "object-curly-spacing": [ 'error', 'always' ],
         "react/display-name": ['off'],
         "@typescript-eslint/ban-ts-comment": "warn",
