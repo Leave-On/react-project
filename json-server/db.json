@@ -25,5 +25,13 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Lev",
+    "lastname": "On",
+    "age": "31",
+    "currency": "RUB",
+    "city": "Rostow",
+    "username": "admin",
+    "avatar": ""
+}
 }
