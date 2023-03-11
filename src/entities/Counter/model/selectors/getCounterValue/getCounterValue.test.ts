@@ -1,4 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit"
 import { StateScheme } from "app/providers/StoreProvider"
 import { getCounterValue } from "./getCounterValue"
 
@@ -10,4 +9,3 @@ describe('getCounterValue.test', () => {
         expect(getCounterValue(state as StateScheme)).toEqual(10)
     })
 })
-

@@ -3,14 +3,12 @@ import cls from './LoginForm.module.scss'
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input';
-import { useSelector, useStore } from 'react-redux';
-import { memo, useCallback, useEffect } from 'react';
+import { useSelector,  } from 'react-redux';
+import { memo, useCallback,  } from 'react';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
-import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { TextTheme } from 'shared/ui/Text/Text';
 import { Text } from '../../../../shared/ui/Text/Text'
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider/config/StateScheme';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
@@ -48,8 +46,10 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
 
     const onLoginClick = useCallback( async () => {
+        //@ts-ignore
         const result = await dispatch(loginByUsername({ username, password }));
         if (result.meta.requestStatus === 'fulfilled') {
+        //@ts-ignore
             onSuccess()
         }
 
@@ -62,20 +62,20 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
             reducers={initialReducers}
         >
             <div className={classNames(cls.LoginForm, {}, [className])}>
-                <Text title={t('Auth from')} />
-                {error && <Text text={t('Wrong Login or password')} theme={TextTheme.ERROR} />}
+                <Text title={t('Auth from') as string} />
+                {error && <Text text={t('Wrong Login or password') as string} theme={TextTheme.ERROR} />}
                 <Input
                     autofocus
                     type="text"
                     className={cls.input}
-                    placeholder={t('Enter name')}
+                    placeholder={t('Enter name') as string}
                     onChange={onChangeUsername}
                     value={username}
                 />
                 <Input
                     type="text"
                     className={cls.input}
-                    placeholder={t('Enter password')}
+                    placeholder={t('Enter password') as string}
                     onChange={onChangePassword}
                     value={password}
                 />
