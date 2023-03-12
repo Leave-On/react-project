@@ -1,4 +1,18 @@
 {
-    "Редактировать": "Редактировать",
-    "Профиль": "Профиль"
+  "Edit": "Редактировать",
+  "Profile": "Профиль",
+  "Error appeared": "Появилась ошибка",
+  "Try to reload page": "Попробуйте перезагрузить страницу",
+  "Save": "Сохранять",
+  "Cancel": "Отмена",
+  "Your lastname": "Ваша фамилия",
+  "Your firstname": "Ваше имя",
+  "Upload your profile picture": "Загрузите изображение своего профиля",
+  "Your username": "Ваш логин",
+  "Your currency": "Ваша валюта",
+  "Your city": "Ваш город",
+  "Your country": "Ваша страна",
+  "Your age": "Ваш возраст",
+  "Choose currency": "Выберите Валюту",
+  "Choose country": "Выберите страну"
 }

@@ -21,6 +21,12 @@
     background: none;
 }
 
+.outlined_red {
+    border: 1px solid var(--red-light);
+    color: var(--red-light);
+    background: none;
+}
+
 .disabled {
     opacity: 0.5;
 }

@@ -34,6 +34,10 @@
     animation: blink 0.5s forwards infinite;
 }
 
+.readonly {
+    opacity: 0.5;
+}
+
 @keyframes blink {
     0% {
         opacity: 0;
