@@ -31,6 +31,8 @@
     "age": 31,
     "city": "Rostov",
     "username": "Le",
-    "avatar": "https://64.media.tumblr.com/a44631cf20d8895c1bff1d14b681f593/e425b0c87297a64b-27/s250x400/3615be01710454533cb593d94d75e6c4e0bfb4fc.png"
+    "avatar": "https://64.media.tumblr.com/a44631cf20d8895c1bff1d14b681f593/e425b0c87297a64b-27/s250x400/3615be01710454533cb593d94d75e6c4e0bfb4fc.png",
+    "currency": "RUB",
+    "country": "Belarus"
   }
 }

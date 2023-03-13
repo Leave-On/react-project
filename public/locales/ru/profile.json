@@ -14,5 +14,10 @@
   "Your country": "Ваша страна",
   "Your age": "Ваш возраст",
   "Choose currency": "Выберите Валюту",
-  "Choose country": "Выберите страну"
+  "Choose country": "Выберите страну",
+  "Incorrect age": "Неверный возраст",
+  "Incorrect Country": "Неверная страна",
+  "Incorrect data": "Неверные данные",
+  "No data": "Нет данных",
+  "Server error": "Ошибка сервера"
 }

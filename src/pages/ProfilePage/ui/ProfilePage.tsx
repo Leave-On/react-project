@@ -7,9 +7,11 @@ import {
     getProfileForm,
     getProfileIsLoading,
     getProfileReadonly,
+    getProfileValidateErrors,
     profileActions,
     ProfileCard,
-    profileReducer
+    profileReducer,
+    ValidateProfileError
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useCallback, useEffect } from 'react';
@@ -17,6 +19,7 @@ import { useSelector } from 'react-redux';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { TextTheme, Text } from 'shared/ui/Text/Text';
 
 const reducers: ReducerList = {
     profile: profileReducer
@@ -27,20 +30,32 @@ interface ProfilePageProps {
 }
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
-    const { t } = useTranslation()
+    const { t } = useTranslation('profile')
     const dispatch = useAppDispatch()
     const readonly = useSelector(getProfileReadonly)
     const formData = useSelector(getProfileForm)
     const isLoading = useSelector(getProfileIsLoading)
     const error = useSelector(getProfileError)
+    const validateErrors = useSelector(getProfileValidateErrors)
+
+    const validateErrorsTranslate = {
+        [ValidateProfileError.INCORRECT_AGE] : t('Incorrect age'),
+        [ValidateProfileError.INCORRECT_COUNTRY] : t('Incorrect Country'),
+        [ValidateProfileError.INCORRECT_DATA] : t('Incorrect data'),
+        [ValidateProfileError.NO_DATA] : t('No data'),
+        [ValidateProfileError.SERVER_ERROR] : t('Server error'),
+    }
 
     useEffect(() => {
-        //@ts-ignore
-        dispatch(fetchProfileData())
+        if (__PROJECT__ !== 'storybook') {
+            //@ts-ignore
+            dispatch(fetchProfileData())
+        }
+
     }, [dispatch])
 
     const onChangeFirstname = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ firstname: value || ''}))
+        dispatch(profileActions.updateProfile({ firstname: value || '' }))
     }, [dispatch])
 
     const onChangeLastname = useCallback((value?: string) => {
@@ -77,6 +92,12 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
+                {validateErrors?.length && validateErrors.map(e => (
+                    <Text
+                        theme={TextTheme.ERROR}
+                        text={e}
+                        key={validateErrorsTranslate[e]}/>
+                ))}
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}
