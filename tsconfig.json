@@ -25,4 +25,5 @@
     "./src/**/*.tsx",
     "./config/jest/setupTests.ts"
 , "src/shared/lib/components/DynamicModuleLoader", "src/entities/Profile/model/slice/ProfileSlice", "src/shared/ui/Avatar/Avatar.module.scss", "src/entities/Profile/model/selectors/getProfileValidateErrors"  ],
+
 }
