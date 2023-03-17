@@ -13,7 +13,6 @@ const ArticlePage: FC<ArticlePageProps> = (props) => {
 
     return (
         <div className={classNames(cls.articlePage, {}, [className])}>
-         ArticlePage
         </div>
     );
 }
