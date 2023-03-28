@@ -57,7 +57,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
-        //@ts-ignore
             dispatch(fetchArticleById(articleId))
         }
 

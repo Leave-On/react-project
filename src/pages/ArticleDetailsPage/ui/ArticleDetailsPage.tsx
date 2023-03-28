@@ -1,6 +1,7 @@
 import { ArticleDetails } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
-import { FC, memo, useEffect } from 'react';
+import { AddNewComment } from 'features/AddNewComment';
+import { FC, memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -10,6 +11,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text } from 'shared/ui/Text/Text';
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors/comments';
+import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { articleDetailsCommentsReducer, getArticleComments } from '../model/slices/ArticleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
@@ -31,9 +33,11 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
     const commentsError = useSelector(getArticleCommentsError)
 
+    const onSendComment = useCallback((value: string) => {
+        dispatch(addCommentForArticle(value))
+    }, [dispatch])
 
     useInitialEffect(() => {
-        // @ts-ignore
         dispatch(fetchCommentsByArticleId(id))
     })
 
@@ -50,6 +54,10 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             <div className={classNames(cls.articleDetailsPage, {}, [className])}>
                 <ArticleDetails articleId={id}/>
                 <Text className={cls.commmentTitle} title={t('Comments') as string}/>
+                <AddNewComment
+                    onSendComment={onSendComment}
+
+                />
                 <CommentList isLoading={commentsIsLoading}  comments={comments}/>
             </div>
         </DynamicModuleLoader>

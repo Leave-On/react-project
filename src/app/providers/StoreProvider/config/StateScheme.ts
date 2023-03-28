@@ -4,6 +4,7 @@ import { ArticleDetailsScheme } from "entities/Article";
 import { CounterScheme } from "entities/Counter";
 import { ProfileScheme } from "entities/Profile";
 import { UserScheme } from "entities/User";
+import { addNewCommentScheme } from "features/AddNewComment";
 import { LoginScheme } from "features/AuthByUsername";
 import { ArticleDetailsCommentsScheme } from "pages/ArticleDetailsPage";
 import { To, NavigateOptions } from "react-router-dom";
@@ -16,7 +17,8 @@ export interface StateScheme {
   loginForm?: LoginScheme;
   profile?: ProfileScheme;
   articleDetails?: ArticleDetailsScheme;
-  articleDetailsComments?: ArticleDetailsCommentsScheme
+  articleDetailsComments?: ArticleDetailsCommentsScheme;
+  addNewComment?: addNewCommentScheme;
 }
 
 export interface ReducerManager {

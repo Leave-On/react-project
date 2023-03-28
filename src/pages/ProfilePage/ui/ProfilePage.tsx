@@ -14,12 +14,14 @@ import {
     ValidateProfileError
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { TextTheme, Text } from 'shared/ui/Text/Text';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 
 const reducers: ReducerList = {
     profile: profileReducer
@@ -37,6 +39,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const isLoading = useSelector(getProfileIsLoading)
     const error = useSelector(getProfileError)
     const validateErrors = useSelector(getProfileValidateErrors)
+    const { id } = useParams<{ id: string }>()
 
     const validateErrorsTranslate = {
         [ValidateProfileError.INCORRECT_AGE] : t('Incorrect age'),
@@ -46,13 +49,11 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         [ValidateProfileError.SERVER_ERROR] : t('Server error'),
     }
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            //@ts-ignore
-            dispatch(fetchProfileData())
+    useInitialEffect(() => {
+        if(id) {
+            dispatch(fetchProfileData(id))
         }
-
-    }, [dispatch])
+    })
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ firstname: value || '' }))

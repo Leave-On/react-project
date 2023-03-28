@@ -1,4 +1,5 @@
-import { lazy } from 'react';
+import { AddNewCommentProps } from 'features/AddNewComment/ui/AddNewComment/AddNewComment';
+import { FC, lazy } from 'react';
 
 export const ArticleDetailsPageAsync = lazy(() => new Promise(resolve => {
     // @ts-ignore

@@ -12,7 +12,8 @@ const data = {
     country: Country.Belarus,
     currency: Currency.USD,
     city: 'Meinhem',
-    username: 'PussySlayer228'
+    username: 'PussySlayer228',
+    id: '1'
 }
 
 describe('updateProfileData.test', () => {
