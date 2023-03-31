@@ -1,9 +1,8 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
-import  ArticlePage  from './ArticlePage';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import ArticlePage from './ArticlePage';
 
 export default {
-    title: 'shared/ArticlePage',
+    title: 'pages/ArticlePage',
     component: ArticlePage,
     argTypes: {
         backgroundColor: { control: 'color' },

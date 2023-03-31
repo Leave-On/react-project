@@ -1,0 +1,13 @@
+.LIST {
+    .card {
+        margin-bottom: 30px;
+    }
+}
+
+.BLOCKS {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
