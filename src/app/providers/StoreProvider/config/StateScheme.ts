@@ -7,6 +7,7 @@ import { UserScheme } from "entities/User";
 import { addNewCommentScheme } from "features/AddNewComment";
 import { LoginScheme } from "features/AuthByUsername";
 import { ArticleDetailsCommentsScheme } from "pages/ArticleDetailsPage";
+import { ArticlesPageScheme } from "pages/ArticlePage";
 import { To, NavigateOptions } from "react-router-dom";
 
 export interface StateScheme {
@@ -19,6 +20,7 @@ export interface StateScheme {
   articleDetails?: ArticleDetailsScheme;
   articleDetailsComments?: ArticleDetailsCommentsScheme;
   addNewComment?: addNewCommentScheme;
+  articlesPage?: ArticlesPageScheme;
 }
 
 export interface ReducerManager {
