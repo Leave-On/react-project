@@ -7,7 +7,7 @@ import { ProfilePage } from "pages/ProfilePage"
 import { RouteProps } from "react-router-dom"
 
 export type AppRouteProps = RouteProps & {
-    authnOnly?: boolean;
+    authOnly?: boolean;
 }
 
 
@@ -40,24 +40,24 @@ export const RouteConfig: Record<AppRoutes, AppRouteProps> = {
         path: RoutePath.about,
         element: <AboutPage />
     },
-    [AppRoutes.NOT_FOUND]: {
-        path: RoutePath.not_found,
-        element: <NotFoundPage />
-    },
     [AppRoutes.PROFILE]: {
         path: `${RoutePath.profile}:id`,
         element: <ProfilePage />,
-        authnOnly: true
+        authOnly: true
     },
     [AppRoutes.ARTICLES]: {
         path: RoutePath.articles,
         element: <ArticlePage />,
-        authnOnly: true
+        authOnly: true
     },
     [AppRoutes.ARTICLE_DETAILS]: {
         path: `${RoutePath.article_details}:id`,
         element: <ArticleDetailsPage />,
-        authnOnly: true
+        authOnly: true
 
-    }
+    },
+    [AppRoutes.NOT_FOUND]: {
+        path: RoutePath.not_found,
+        element: <NotFoundPage />
+    },
 }

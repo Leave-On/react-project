@@ -11,6 +11,7 @@ import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicM
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Page } from 'shared/ui/Page/Page';
 import { Text } from 'shared/ui/Text/Text';
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors/comments';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
@@ -51,15 +52,15 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
     if(!id) {
         return (
-            <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
                 {t('No such article')}
-            </div>
+            </Page>
         )
     }
 
     return (
         <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
-            <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
                 <Button theme={ButtonTheme.OUTLINED} onClick={onBackToList}>{t('Back')}</Button>
                 <ArticleDetails articleId={id}/>
                 <Text className={cls.commmentTitle} title={t('Comments') as string}/>
@@ -68,7 +69,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
                 />
                 <CommentList isLoading={commentsIsLoading}  comments={comments}/>
-            </div>
+            </Page>
         </DynamicModuleLoader>
 
     );
