@@ -6,4 +6,5 @@ export const getArticlesPageError = (state: StateScheme) => state.articlesPage?.
 export const getArticlesPageView = (state: StateScheme) => state.articlesPage?.view || ArticleView.BLOCKS
 export const getArticlesPageLimit = (state: StateScheme) => state.articlesPage?.limit || 9
 export const getArticlesPageHasMore = (state: StateScheme) => state.articlesPage?.hasMore
-export const getArticlesPageNum= (state: StateScheme) => state.articlesPage?.page || 1
+export const getArticlesPageNum = (state: StateScheme) => state.articlesPage?.page || 1
+export const getArticlesPageInited = (state: StateScheme) => state.articlesPage?._inited
