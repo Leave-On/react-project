@@ -6,12 +6,14 @@ import { ProfileScheme } from "entities/Profile";
 import { UserScheme } from "entities/User";
 import { addNewCommentScheme } from "features/AddNewComment";
 import { LoginScheme } from "features/AuthByUsername";
+import { ScrollSaveScheme } from "features/ScrollSave";
 import { ArticleDetailsCommentsScheme } from "pages/ArticleDetailsPage";
 import { ArticlesPageScheme } from "pages/ArticlePage";
 
 export interface StateScheme {
   counter: CounterScheme;
   user: UserScheme;
+  scroll: ScrollSaveScheme;
 
   // async reducers
   loginForm?: LoginScheme;
