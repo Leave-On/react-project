@@ -6,14 +6,14 @@ import { ArticleDetailsReducer } from 'entities/Article/model/slice/ArticleDetai
 import { profileReducer } from 'entities/Profile';
 import { addNewCommentReducer } from 'features/AddNewComment/model/slices/addNewCommentSlice';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
-import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slices/ArticleDetailsCommentsSlice';
+import { ArticleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateScheme>> = {
     loginForm: loginReducer,
     profile: profileReducer,
     articleDetails: ArticleDetailsReducer,
     addNewComment: addNewCommentReducer,
-    articleDetailsComments: articleDetailsCommentsReducer
+    articleDetailsPage: ArticleDetailsPageReducer
 }
 
 export const StoreDecorator = (

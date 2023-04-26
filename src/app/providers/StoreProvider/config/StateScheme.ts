@@ -7,7 +7,8 @@ import { UserScheme } from "entities/User";
 import { addNewCommentScheme } from "features/AddNewComment";
 import { LoginScheme } from "features/AuthByUsername";
 import { ScrollSaveScheme } from "features/ScrollSave";
-import { ArticleDetailsCommentsScheme } from "pages/ArticleDetailsPage";
+import { ArticleDetailsCommentsScheme, ArticleDetailsRecommendationsScheme } from "pages/ArticleDetailsPage";
+import { ArticleDetailsPageSheme } from "pages/ArticleDetailsPage";
 import { ArticlesPageScheme } from "pages/ArticlePage";
 
 export interface StateScheme {
@@ -19,9 +20,9 @@ export interface StateScheme {
   loginForm?: LoginScheme;
   profile?: ProfileScheme;
   articleDetails?: ArticleDetailsScheme;
-  articleDetailsComments?: ArticleDetailsCommentsScheme;
   addNewComment?: addNewCommentScheme;
   articlesPage?: ArticlesPageScheme;
+  articleDetailsPage?: ArticleDetailsPageSheme;
 }
 
 // export type MountedReducers = OptionalRecord<StateSchemeKey, boolean>

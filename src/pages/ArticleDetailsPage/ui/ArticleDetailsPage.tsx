@@ -1,4 +1,4 @@
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticleList } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { AddNewComment } from 'features/AddNewComment';
 import { FC, memo, useCallback } from 'react';
@@ -11,12 +11,19 @@ import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicM
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 import { Page } from 'widgets/Page/Page';
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors/comments';
+import { getArticleRecommendationsError, getArticleRecommendationsIsLoading } from '../model/selectors/recommendations';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchArticleRecommendations } from '../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { articleDetailsCommentsReducer, getArticleComments } from '../model/slices/ArticleDetailsCommentsSlice';
+import { ArticleDetailsPageReducer } from '../model/slices';
+import {  getArticleComments } from '../model/slices/ArticleDetailsCommentsSlice';
+import {
+    ArticleDetailsRecommendationsReducer,
+    getArticleRecommendations
+} from '../model/slices/ArticleDetailsRecommendationsSlice';
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
@@ -24,7 +31,7 @@ interface ArticleDetailsPageProps {
 }
 
 const reducer: ReducerList = {
-    articleDetailsComments: articleDetailsCommentsReducer
+    articleDetailsPage: ArticleDetailsPageReducer
 }
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
@@ -34,8 +41,12 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const navigate = useNavigate()
     const { id } = useParams<{ id: string }>()
     const comments = useSelector(getArticleComments.selectAll)
+    const recommendations = useSelector(getArticleRecommendations.selectAll)
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
     const commentsError = useSelector(getArticleCommentsError)
+    const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading)
+    const recommendationsError= useSelector(getArticleRecommendationsError)
+
 
     const onBackToList = useCallback(() => {
         navigate(RoutePath.articles)
@@ -48,6 +59,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id))
+        dispatch(fetchArticleRecommendations())
     })
 
     if(!id) {
@@ -63,7 +75,21 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
                 <Button theme={ButtonTheme.OUTLINED} onClick={onBackToList}>{t('Back')}</Button>
                 <ArticleDetails articleId={id}/>
-                <Text className={cls.commmentTitle} title={t('Comments') as string}/>
+                <Text
+                    size={TextSize.L}
+                    title={t('Recommended articles') as string}
+                />
+                <ArticleList
+                    articles={recommendations}
+                    isLoading={recommendationsIsLoading}
+                    className={cls.recommendations}
+                    target='_blank'
+                />
+                <Text
+                    size={TextSize.L}
+                    className={cls.commmentTitle}
+                    title={t('Comments') as string}
+                />
                 <AddNewComment
                     onSendComment={onSendComment}
 

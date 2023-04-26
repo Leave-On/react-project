@@ -45,7 +45,7 @@ module.exports = {
                 ignoreAttribute: ['data-tetid', 'to']
             }
         ],
-        "max-len": ['error', { ignoreComments: true, "code": 120 }],
+        "max-len": ['error', { ignoreComments: true, "code": 150 }],
         "object-curly-spacing": [ 'error', 'always' ],
         "react/display-name": ['off'],
         "@typescript-eslint/ban-ts-comment": "warn",
