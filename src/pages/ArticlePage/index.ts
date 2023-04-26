@@ -1,4 +1,4 @@
-import { ArticlePageAsync as ArticlePage } from './ui/ArticlePage.async'
+import { ArticlePageAsync as ArticlePage } from './ui/ArticlePage/ArticlePage.async'
 import { ArticlesPageScheme } from './model/types/articlesPageSheme'
 
 

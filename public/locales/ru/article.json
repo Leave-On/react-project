@@ -4,5 +4,18 @@
   "Loading error": "Ошибка загрузки",
   "Comments": "Комментарии",
   "Read more": "Читать далее",
-  "Back": "Назад"
+  "Back": "Назад",
+  "Sort by": "Сортировать по",
+  "Search": "Поиск",
+  "ascending": "возрастанию",
+  "descending": "убыванию",
+  "by": "по",
+  "creating date": "дате создания",
+  "title": "заголовку",
+  "views": "количеству просмотров",
+  "IT": "IT",
+  "all": "все",
+  "economics": "экономика",
+  "science": "наука",
+  "Articles not found": "Статьи не найдены"
 }
