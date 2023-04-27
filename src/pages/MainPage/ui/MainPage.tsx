@@ -12,7 +12,7 @@ const MainPage = () => {
     }
     return (
         <Page>
-            {t('Главная страница')}
+            {t('Main page')}
             < Input
                 placeholder="type here"
                 value={value}

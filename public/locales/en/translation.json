@@ -1,7 +1,7 @@
 {
   "Перевод": "Translate",
   "О нас": "About us",
-  "Главная страница": "Main",
+  "Главная страница": "Main page",
   "Язык": "Русский",
   "Короткий язык": "РУ",
   "Страница не найдена": "Not found",
@@ -17,5 +17,8 @@
   "Quit": "Quit",
   "Profile page": "Profile Page",
   "No comments yet": "No comments yet",
-  "Publish": "Publish"
+  "Publish": "Publish",
+  "React PrOjEcT": "React PrOjEcT",
+  "Main page": "Main page",
+  "Create article": "Create article"
 }

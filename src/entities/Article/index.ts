@@ -1,4 +1,5 @@
 import { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
+import { getArticleDetailsData } from './model/selectors/ArticleDetails'
 import { Article, ArticleView, ArticleSortField, ArticleType } from './model/types/article'
 import { ArticleDetailsScheme } from './model/types/ArticleDetailsScheme'
 import { ArticleList } from './ui/ArticleList/ArticleList'
@@ -14,5 +15,6 @@ export {
     ArticleViewSelector,
     ArticleSortField,
     ArticleType,
-    ArticleTypeTabs
+    ArticleTypeTabs,
+    getArticleDetailsData
 }

@@ -13,17 +13,18 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { Page } from 'widgets/Page/Page';
-import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors/comments';
-import { getArticleRecommendationsError, getArticleRecommendationsIsLoading } from '../model/selectors/recommendations';
-import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
-import { fetchArticleRecommendations } from '../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
-import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { ArticleDetailsPageReducer } from '../model/slices';
-import {  getArticleComments } from '../model/slices/ArticleDetailsCommentsSlice';
+import { getArticleCommentsError, getArticleCommentsIsLoading } from '../../model/selectors/comments';
+import { getArticleRecommendationsError, getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { ArticleDetailsPageReducer } from '../../model/slices';
+import {  getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice';
 import {
     ArticleDetailsRecommendationsReducer,
     getArticleRecommendations
-} from '../model/slices/ArticleDetailsRecommendationsSlice';
+} from '../../model/slices/ArticleDetailsRecommendationsSlice';
+import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
@@ -38,7 +39,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { className } = props;
     const { t } = useTranslation('article')
     const dispatch = useAppDispatch()
-    const navigate = useNavigate()
     const { id } = useParams<{ id: string }>()
     const comments = useSelector(getArticleComments.selectAll)
     const recommendations = useSelector(getArticleRecommendations.selectAll)
@@ -48,9 +48,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const recommendationsError= useSelector(getArticleRecommendationsError)
 
 
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles)
-    }, [navigate])
 
 
     const onSendComment = useCallback((value: string) => {
@@ -73,7 +70,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     return (
         <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
             <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-                <Button theme={ButtonTheme.OUTLINED} onClick={onBackToList}>{t('Back')}</Button>
+                <ArticleDetailsHeader />
                 <ArticleDetails articleId={id}/>
                 <Text
                     size={TextSize.L}

@@ -2,4 +2,4 @@ export { ArticleDetailsCommentsScheme } from './model/types/ArticleDetailsCommen
 export { ArticleDetailsRecommendationsScheme } from './model/types/ArticleDetailsRecommendationsScheme'
 export { ArticleDetailsPageSheme } from './model/types'
 
-export { ArticleDetailsPageAsync as ArticleDetailsPage } from './ui/ArticleDetailsPage.async'
+export { ArticleDetailsPageAsync as ArticleDetailsPage } from './ui/ArticleDetailsPage/ArticleDetailsPage.async'
