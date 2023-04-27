@@ -5,7 +5,7 @@ export default {
     title: 'shared/ArticleDetailsHeader',
     component: ArticleDetailsHeader,
     argTypes: {
-       backgroundColor: { control: 'color' },
+        backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof ArticleDetailsHeader>;
 
