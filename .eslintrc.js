@@ -35,7 +35,8 @@ module.exports = {
         "react",
         "@typescript-eslint",
         "i18next",
-        "react-hooks"
+        "react-hooks",
+        "relative-path-checker"
     ],
     "rules": {
         "i18next/no-literal-string": [
@@ -51,6 +52,7 @@ module.exports = {
         "@typescript-eslint/ban-ts-comment": "warn",
         "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
         "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
-        "indent": ["error", 4]
+        "indent": ["error", 4],
+        "relative-path-checker/path-checker": "error"
     }
 }

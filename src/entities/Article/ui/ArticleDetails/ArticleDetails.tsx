@@ -11,7 +11,7 @@ import {
     getArticleDetailsData,
     getArticleDetailsError,
     getArticleDetailsIsLoading
-} from 'entities/Article/model/selectors/ArticleDetails';
+} from '../../model/selectors/ArticleDetails';
 import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';

@@ -1,4 +1,4 @@
-import { ArticleType } from 'entities/Article/model/types/article';
+import { ArticleType } from '../../model/types/article';
 import { getArticlesPageType } from 'pages/ArticlePage/model/selectors/articlePageSelectors';
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
