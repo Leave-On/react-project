@@ -6,6 +6,7 @@ import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicM
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { HStack } from 'shared/ui/Stack';
 import { getAddNewCommentError, getAddNewCommentText } from '../../model/selectors/addNewCommentSelectors';
 import { addNewCommentActions, addNewCommentReducer } from '../../model/slices/addNewCommentSlice';
 import cls from './AddNewComment.module.scss';
@@ -37,7 +38,7 @@ const AddNewComment: FC<AddNewCommentProps> = (props) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.AddNewComment, {}, [className])}>
+            <HStack justify={'between'} max className={classNames(cls.AddNewComment, {}, [className])}>
                 <Input
                     className={cls.input}
                     placeholder={t('What do you think about that?') as string}
@@ -47,7 +48,7 @@ const AddNewComment: FC<AddNewCommentProps> = (props) => {
                 <Button
                     onClick={onSendHandler}
                 >{t('Publish')}</Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
 
     );

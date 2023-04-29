@@ -6,8 +6,8 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
-import cls from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -34,24 +34,22 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     }, [dispatch])
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <HStack max justify={'between'} className={classNames('', {}, [className])}>
             <Text title={t('Profile') as string} />
             {canEdit && (
-                <div className={cls.btnsWrapper}>
+                <>
                     { readonly ? (
                         <Button
                             theme={ButtonTheme.OUTLINED}
-                            className={cls.editBtn}
                             onClick={onEdit}
                         >
                             {t('Edit')}
                         </Button>
                     )
                         : (
-                            <>
+                            <HStack gap={'8'}>
                                 <Button
                                     theme={ButtonTheme.OUTLINED}
-                                    className={cls.editBtn}
                                     onClick={onCancelEdit}
                                 >
                                     {t('Cancel')}
@@ -59,18 +57,17 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                                 <>
                                     <Button
                                         theme={ButtonTheme.OUTLINED_RED}
-                                        className={cls.saveBtn}
                                         onClick={onSave}
                                     >
                                         {t('Save')}
                                     </Button>
                                 </>
-                            </>
+                            </HStack>
                         )
                     }
-                </div>
+                </>
             )}
 
-        </div>
+        </HStack>
     );
 }
