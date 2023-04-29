@@ -12,7 +12,7 @@ export default {
     },
 } as ComponentMeta<typeof CurrencySelect>;
 
-const Template: ComponentStory<typeof CurrencySelect> = (args) => <CurrencySelect {...args as object} />;
+// const Template: ComponentStory<typeof CurrencySelect> = (args) => <CurrencySelect onChange={} {...args as object} />;
 
-export const Primary = Template.bind({});
-Primary.args = {};
+// export const Primary = Template.bind({});
+// Primary.args = {};
