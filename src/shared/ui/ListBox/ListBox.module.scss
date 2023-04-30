@@ -12,7 +12,7 @@
 
 .options {
     background: var(--listbox-bg);
-    position: relative;
+    position: absolute;
     z-index: 9999;
     border-radius: 12px;
     box-shadow: 4px 4px 8px var(--inverted-bg-color);
@@ -39,6 +39,22 @@
     cursor: auto;
 }
 
-.optionsTop {
+.optionsTopLeft {
     bottom: 100%;
+    right: 0;
+}
+
+.optionsTopRight {
+    bottom: 100%;
+    left: 0;
+}
+
+.optionsBottomLeft {
+    top: 100%;
+    right: 0;
+}
+
+.optionsBottomRight {
+    top: 100%;
+    left: 0;
 }
