@@ -15,8 +15,8 @@ const MainPage = () => {
         <Page>
             {t('Main page')}
             <HStack>
-                <div>asdfasvdaf adsg asd a</div>
-                <ListBox
+                <div>{t('login: user - password: 123')}</div>
+                {/* <ListBox
                     defaultValue={'Choose'}
                     value={undefined}
                     items={[
@@ -25,7 +25,7 @@ const MainPage = () => {
                         { value: '2', content: 'sfdgg' },
                     ]}
                     onChange={(value: string) => {}}
-                />
+                /> */}
             </HStack>
         </Page>
     );

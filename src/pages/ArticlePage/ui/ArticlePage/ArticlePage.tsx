@@ -22,23 +22,23 @@ interface ArticlePageProps {
    className?: string;
 }
 
+const reducers: ReducerList = {
+    articlesPage: articlesPageReducer
+}
+
 const ArticlePage: FC<ArticlePageProps> = (props) => {
     const { className } = props;
     const { t } = useTranslation('article')
     const dispatch = useAppDispatch()
-    // const [searchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage())
     }, [dispatch])
 
-    const reducers: ReducerList = {
-        articlesPage: articlesPageReducer
-    }
-
-    // useInitialEffect(() => {
-    //     dispatch(initArticlesPage(searchParams))
-    // })
+    useInitialEffect(() => {
+        dispatch(initArticlesPage(searchParams))
+    })
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>

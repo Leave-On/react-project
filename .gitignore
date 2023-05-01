@@ -5,3 +5,4 @@ node_modules
 .loki/report.json
 /.vscode/
 /.fttemplates/
+/reports

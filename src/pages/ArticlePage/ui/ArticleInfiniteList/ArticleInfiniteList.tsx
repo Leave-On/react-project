@@ -16,16 +16,11 @@ interface ArticleInfiniteListProps {
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
     const { className } = props;
     const { t } = useTranslation()
-    const dispatch = useAppDispatch()
     const articles = useSelector(getArticles.selectAll)
     const isLoading = useSelector(getArticlesPageIsLoading)
     const error = useSelector(getArticlesPageError)
     const view = useSelector(getArticlesPageView)
-    const [searchParams] = useSearchParams();
 
-    useInitialEffect(() => {
-        dispatch(initArticlesPage(searchParams))
-    })
 
     if (error) {
         return (

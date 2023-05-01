@@ -1,28 +1,13 @@
-import { ArticleDetails, ArticleList } from 'entities/Article';
-import { CommentList } from 'entities/Comment';
-import { AddNewComment } from 'features/AddNewComment';
+import { ArticleDetails } from 'entities/Article';
 import { ArticleRecomendationsList } from 'features/ArticleRecomendationsList';
-import { FC, memo, useCallback } from 'react';
+import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { VStack } from 'shared/ui/Stack';
-import { Text, TextSize } from 'shared/ui/Text/Text';
 import { Page } from 'widgets/Page/Page';
-import { getArticleCommentsError, getArticleCommentsIsLoading } from '../../model/selectors/comments';
-import { getArticleRecommendationsError, getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
-import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { ArticleDetailsPageReducer } from '../../model/slices';
-import { getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice';
-import {
-    getArticleRecommendations
-} from '../../model/slices/ArticleDetailsRecommendationsSlice';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 import cls from './ArticleDetailsPage.module.scss';

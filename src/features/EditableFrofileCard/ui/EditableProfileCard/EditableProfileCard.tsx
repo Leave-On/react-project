@@ -8,8 +8,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from 'shared/ui/Stack';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
@@ -18,15 +18,15 @@ import { getProfileValidateErrors } from '../../model/selectors/getProfileValida
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/ProfileSlice';
 import { ValidateProfileError } from '../../model/types/EditableProfileCardScheme';
+import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import cls from './EditableFrofileCard.module.scss';
-import { VStack } from 'shared/ui/Stack';
 
 interface EditableFrofileCardProps {
    className?: string;
    id: string;
 }
 
-export const EditableFrofileCard = memo((props: EditableFrofileCardProps) => {
+export const EditableProfileCard = memo((props: EditableFrofileCardProps) => {
     const { className, id } = props;
     const { t } = useTranslation('profile')
     const dispatch = useAppDispatch()
@@ -102,6 +102,7 @@ export const EditableFrofileCard = memo((props: EditableFrofileCardProps) => {
                         theme={TextTheme.ERROR}
                         text={validateErrorsTranslate[e]}
                         key={e}
+                        data-testid={'EditableFrofileCard.Error'}
                     />
                 ))}
                 <ProfileCard
