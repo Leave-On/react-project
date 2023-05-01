@@ -1,6 +1,7 @@
 import { ArticleDetails, ArticleList } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { AddNewComment } from 'features/AddNewComment';
+import { ArticleRecomendationsList } from 'features/ArticleRecomendationsList';
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -22,6 +23,7 @@ import { getArticleComments } from '../../model/slices/ArticleDetailsCommentsSli
 import {
     getArticleRecommendations
 } from '../../model/slices/ArticleDetailsRecommendationsSlice';
+import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
 import cls from './ArticleDetailsPage.module.scss';
 
@@ -36,26 +38,10 @@ const reducer: ReducerList = {
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { className } = props;
     const { t } = useTranslation('article')
-    const dispatch = useAppDispatch()
     const { id } = useParams<{ id: string }>()
-    const comments = useSelector(getArticleComments.selectAll)
-    const recommendations = useSelector(getArticleRecommendations.selectAll)
-    const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
-    const commentsError = useSelector(getArticleCommentsError)
-    const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading)
-    const recommendationsError= useSelector(getArticleRecommendationsError)
 
+    console.log('details');
 
-
-
-    const onSendComment = useCallback((value: string) => {
-        dispatch(addCommentForArticle(value))
-    }, [dispatch])
-
-    useInitialEffect(() => {
-        dispatch(fetchCommentsByArticleId(id))
-        dispatch(fetchArticleRecommendations())
-    })
 
     if(!id) {
         return (
@@ -68,29 +54,11 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     return (
         <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
             <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-                <VStack gap={'16'} max>
+                <VStack gap='16' max>
                     <ArticleDetailsHeader />
                     <ArticleDetails articleId={id}/>
-                    <Text
-                        size={TextSize.L}
-                        title={t('Recommended articles') as string}
-                    />
-                    <ArticleList
-                        articles={recommendations}
-                        isLoading={recommendationsIsLoading}
-                        className={cls.recommendations}
-                        target='_blank'
-                    />
-                    <Text
-                        size={TextSize.L}
-                        className={cls.commmentTitle}
-                        title={t('Comments') as string}
-                    />
-                    <AddNewComment
-                        onSendComment={onSendComment}
-
-                    />
-                    <CommentList isLoading={commentsIsLoading}  comments={comments}/>
+                    <ArticleRecomendationsList />
+                    <ArticleDetailsComments articleId={id}/>
                 </VStack>
             </Page>
         </DynamicModuleLoader>

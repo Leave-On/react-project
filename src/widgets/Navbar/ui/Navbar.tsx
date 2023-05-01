@@ -59,7 +59,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     items={[
                         {
                             content: t('Profile'),
-                            onClick: onLogout,
                             href: RoutePath.profile + authData.id
 
                         },

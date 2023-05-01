@@ -2,14 +2,15 @@ import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } f
 import {  AxiosInstance } from "axios";
 import { ArticleDetailsScheme } from "entities/Article";
 import { CounterScheme } from "entities/Counter";
-import { ProfileScheme } from "entities/Profile";
 import { UserScheme } from "entities/User";
 import { addNewCommentScheme } from "features/AddNewComment";
 import { LoginScheme } from "features/AuthByUsername";
+import { ProfileScheme } from "features/EditableFrofileCard";
 import { ScrollSaveScheme } from "features/ScrollSave";
 import { ArticleDetailsCommentsScheme, ArticleDetailsRecommendationsScheme } from "pages/ArticleDetailsPage";
 import { ArticleDetailsPageSheme } from "pages/ArticleDetailsPage";
 import { ArticlesPageScheme } from "pages/ArticlePage";
+import { rtkApi } from "shared/api/rtkApi";
 
 export interface StateScheme {
   counter: CounterScheme;
@@ -23,6 +24,7 @@ export interface StateScheme {
   addNewComment?: addNewCommentScheme;
   articlesPage?: ArticlesPageScheme;
   articleDetailsPage?: ArticleDetailsPageSheme;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 }
 
 // export type MountedReducers = OptionalRecord<StateSchemeKey, boolean>

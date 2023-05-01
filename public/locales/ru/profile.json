@@ -19,5 +19,6 @@
   "Incorrect Country": "Неверная страна",
   "Incorrect data": "Неверные данные",
   "No data": "Нет данных",
-  "Server error": "Ошибка сервера"
+  "Server error": "Ошибка сервера",
+  "No such profile": "Нет такого профиля"
 }

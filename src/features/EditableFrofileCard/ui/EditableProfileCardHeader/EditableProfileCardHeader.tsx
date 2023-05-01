@@ -1,5 +1,8 @@
-import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
 import { getUserAuthData } from 'entities/User';
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { profileActions } from '../../model/slice/ProfileSlice';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -9,11 +12,11 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
 
-interface ProfilePageHeaderProps {
+interface EditableProfileCardHeaderProps {
   className?: string;
 }
 
-export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
+export const EditableProfileCardHeader = ({ className }: EditableProfileCardHeaderProps) => {
     const { t } = useTranslation('profile')
     const dispatch = useAppDispatch()
     const readonly = useSelector(getProfileReadonly)
@@ -67,7 +70,6 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                     }
                 </>
             )}
-
         </HStack>
     );
 }
