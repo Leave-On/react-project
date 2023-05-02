@@ -2,8 +2,8 @@
   "Перевод": "Translate",
   "О нас": "About us",
   "Главная": "Main page",
-  "Страница профиля":"Profile page",
-  "Статьи":"Articles",
+  "Страница профиля": "Profile page",
+  "Статьи": "Articles",
   "Язык": "Русский",
   "Короткий язык": "РУ",
   "Страница не найдена": "Not found",
@@ -22,5 +22,7 @@
   "Publish": "Publish",
   "React PrOjEcT": "React PrOjEcT",
   "Main page": "Main page",
-  "Create article": "Create article"
+  "Create article": "Create article",
+  "Admin": "Admin",
+  "No acccess": "You are not allowed to go to that page."
 }

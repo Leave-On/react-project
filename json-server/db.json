@@ -524,14 +524,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://64.media.tumblr.com/a44631cf20d8895c1bff1d14b681f593/e425b0c87297a64b-27/s250x400/3615be01710454533cb593d94d75e6c4e0bfb4fc.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
+      "avatar": "https://64.media.tumblr.com/93190ae13550e9109579481f51591a60/tumblr_nkqm6zIXPb1rpwm80o1_250.jpg"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": ["MANAGER"],
       "avatar": "https://64.media.tumblr.com/93190ae13550e9109579481f51591a60/tumblr_nkqm6zIXPb1rpwm80o1_250.jpg"
     }
   ],
