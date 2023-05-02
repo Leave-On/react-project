@@ -57,6 +57,7 @@
     "@typescript-eslint/parser": "^5.51.0",
     "babel-loader": "^8.0.0",
     "chromatic": "^6.17.1",
+    "circular-dependency-plugin": "^5.2.2",
     "concurrently": "^7.6.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
