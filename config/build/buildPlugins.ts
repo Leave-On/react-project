@@ -29,19 +29,20 @@ export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions): w
                 { from: paths.locales, to: paths.buildLocales },
             ],
         }),
-        new CircularDependencyPlugin({
-            // exclude detection of files based on a RegExp
-            exclude: /a\.js|node_modules/,
-            // add errors to webpack instead of warnings
-            failOnError: true,
-        })
+
 
     ]
     if (isDev) {
         plugins.push(new BundleAnalyzerPlugin({
             openAnalyzer: false
         }))
-        plugins.push(new webpack.HotModuleReplacementPlugin())
+        plugins.push(new webpack.HotModuleReplacementPlugin()),
+        plugins.push(new CircularDependencyPlugin({
+            // exclude detection of files based on a RegExp
+            exclude: /a\.js|node_modules/,
+            // add errors to webpack instead of warnings
+            failOnError: true,
+        }))
     }
 
     return plugins

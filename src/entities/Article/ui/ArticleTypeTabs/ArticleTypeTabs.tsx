@@ -1,10 +1,8 @@
-import { ArticleType } from '../../model/consts/consts';
-import { getArticlesPageType } from 'pages/ArticlePage/model/selectors/articlePageSelectors';
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
+import { ArticleType } from '../../model/consts/consts';
 
 interface ArticleTypeTabsProps {
    className?: string;
@@ -15,7 +13,6 @@ interface ArticleTypeTabsProps {
 export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
     const { className, value, onChangeType } = props;
     const { t } = useTranslation()
-    const type = useSelector(getArticlesPageType)
 
     const typeTabs = useMemo<TabItem[]>(() => [
         {
