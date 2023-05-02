@@ -22,19 +22,10 @@ const reducer: ReducerList = {
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { className } = props;
-    const { t } = useTranslation('article')
     const { id } = useParams<{ id: string }>()
 
     console.log('details');
 
-
-    if(!id) {
-        return (
-            <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-                {t('No such article')}
-            </Page>
-        )
-    }
 
     return (
         <DynamicModuleLoader reducers={reducer} removeAfterUnmount>

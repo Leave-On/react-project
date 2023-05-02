@@ -23,7 +23,7 @@ import cls from './EditableFrofileCard.module.scss';
 
 interface EditableFrofileCardProps {
    className?: string;
-   id: string;
+   id?: string;
 }
 
 export const EditableProfileCard = memo((props: EditableFrofileCardProps) => {

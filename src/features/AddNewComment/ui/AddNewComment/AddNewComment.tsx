@@ -41,7 +41,7 @@ const AddNewComment: FC<AddNewCommentProps> = (props) => {
             <HStack justify={'between'} max className={classNames(cls.AddNewComment, {}, [className])}>
                 <Input
                     className={cls.input}
-                    placeholder={t('What do you think about that?') as string}
+                    placeholder={t('any-thoughts') as string}
                     value={text}
                     onChange={onCommentTextChange}
                 />

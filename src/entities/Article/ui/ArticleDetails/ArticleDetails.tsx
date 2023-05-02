@@ -26,7 +26,7 @@ import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
    className?: string;
-   articleId: string;
+   articleId?: string;
 }
 
 const reducers: ReducerList = {
@@ -35,7 +35,7 @@ const reducers: ReducerList = {
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const { className, articleId } = props;
-    const { t } = useTranslation('article')
+    const { t } = useTranslation('articles')
     const dispatch = useAppDispatch()
     const isLoading = useSelector(getArticleDetailsIsLoading)
     const error = useSelector(getArticleDetailsError)
@@ -108,7 +108,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-            <VStack gap={'16'} className={classNames(cls.ArticleDetails, {}, [className])}>
+            <VStack gap={'16'} max className={classNames(cls.ArticleDetails, {}, [className])}>
                 {content}
             </VStack>
         </DynamicModuleLoader>

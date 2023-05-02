@@ -12,13 +12,6 @@ interface ProfilePageProps {
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
     const { id } = useParams<{ id: string }>()
-    const { t } = useTranslation('profile')
-
-    if (!id) {
-        return (
-            <Text title={t('No such profile') as string} theme={TextTheme.ERROR} />
-        )
-    }
 
     return (
         <Page className={classNames('', {}, [className])}>
