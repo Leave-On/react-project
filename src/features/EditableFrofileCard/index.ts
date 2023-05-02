@@ -1,7 +1,3 @@
-import { ProfileScheme } from './model/types/EditableProfileCardScheme'
-import { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard'
+export type { ProfileScheme } from './model/types/EditableProfileCardScheme'
 
-export {
-    EditableProfileCard as EditableFrofileCard,
-    ProfileScheme
-}
+export { EditableProfileCard as EditableFrofileCard } from './ui/EditableProfileCard/EditableProfileCard'

@@ -34,15 +34,4 @@ export const CountrySelect = memo(({ className, value, onChange, readonly }: Cou
             label={t('Choose country') as string}
         />
     )
-
-    // return (
-    //     <Select
-    //         className={classNames('', {}, [className])}
-    //         label={t('Choose country') as string}
-    //         options = {options}
-    //         value={value}
-    //         onChange={onChange}
-    //         readonly={readonly}
-    //     />
-    // );
 })

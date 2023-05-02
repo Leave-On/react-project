@@ -1,5 +1,3 @@
-import { ArticlePageAsync as ArticlePage } from './ui/ArticlePage/ArticlePage.async'
-import { ArticlesPageScheme } from './model/types/articlesPageSheme'
+export { ArticlePageAsync as ArticlePage } from './ui/ArticlePage/ArticlePage.async'
 
-
-export { ArticlePage, ArticlesPageScheme }
+export type { ArticlesPageScheme } from './model/types/articlesPageSheme'
