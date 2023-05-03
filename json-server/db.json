@@ -589,5 +589,32 @@
       "currency": "EUR",
       "country": "Armenia"
     }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Notification 1",
+      "description": "description",
+      "userId": "2"
+    },
+    {
+      "id": "2",
+      "title": "Notification 1",
+      "description": "description",
+      "userId": "2"
+    },
+    {
+      "id": "3",
+      "title": "Notification 1",
+      "description": "description",
+      "userId": "1",
+      "href": "http://localhost:3000/admin_panel"
+    },
+    {
+      "id": "4",
+      "title": "Notification 1",
+      "description": "description",
+      "userId": "2"
+    }
   ]
 }

@@ -4,7 +4,7 @@ export default function(): PluginItem {
     return {
         visitor: {
             Program(path, state) {
-                const propsToRemove = state.opt.props || []
+                const propsToRemove = state.opts.props || []
 
                 path.traverse({
                     JSXIdentifier(current) {
