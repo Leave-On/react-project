@@ -5,7 +5,7 @@ export default {
     title: 'shared/NotificationsList',
     component: NotificationsList,
     argTypes: {
-       backgroundColor: { control: 'color' },
+        backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof NotificationsList>;
 

@@ -5,7 +5,7 @@ export default {
     title: 'shared/NotificationItem',
     component: NotificationItem,
     argTypes: {
-       backgroundColor: { control: 'color' },
+        backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof NotificationItem>;
 

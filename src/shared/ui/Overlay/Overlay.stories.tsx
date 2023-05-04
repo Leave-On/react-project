@@ -5,7 +5,7 @@ export default {
     title: 'shared/Overlay',
     component: Overlay,
     argTypes: {
-       backgroundColor: { control: 'color' },
+        backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof Overlay>;
 

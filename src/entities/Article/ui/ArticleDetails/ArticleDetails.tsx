@@ -19,7 +19,7 @@ import {
 } from '../../model/selectors/ArticleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { ArticleDetailsReducer } from '../../model/slice/ArticleDetailsSlice';
-import { ArticleBlock} from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
 
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';

@@ -5,7 +5,7 @@ export default {
     title: 'shared/Popover',
     component: Popover,
     argTypes: {
-       backgroundColor: { control: 'color' },
+        backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof Popover>;
 

@@ -5,7 +5,7 @@ export default {
     title: 'shared/AvatarDropdown',
     component: AvatarDropdown,
     argTypes: {
-       backgroundColor: { control: 'color' },
+        backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof AvatarDropdown>;
 

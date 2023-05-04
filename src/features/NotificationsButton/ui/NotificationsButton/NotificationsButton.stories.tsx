@@ -5,7 +5,7 @@ export default {
     title: 'shared/NotificationsButton',
     component: NotificationsButton,
     argTypes: {
-       backgroundColor: { control: 'color' },
+        backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof NotificationsButton>;
 
