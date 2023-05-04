@@ -6,13 +6,19 @@
 
 body {
     font-family: var(--font-family-main);
-    font-size: var(--font-m);
-    color: var(--primary-color);
+
 }
 
 .app {
     background: var(--bg-color);
     min-height: 100vh;
+}
+
+.app,
+.app_modal,
+.app_drawer {
+    font-size: var(--font-m);
+    color: var(--primary-color);
 }
 
 .content-page {

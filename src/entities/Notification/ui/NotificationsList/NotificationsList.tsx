@@ -16,7 +16,10 @@ export const NotificationsList = memo((props: NotificationsListProps) => {
         pollingInterval: 5000
     })
 
+
     if (isLoading) {
+        console.log(isLoading);
+
         return (
             <VStack>
                 <Skeleton width='100%' border='8px' height='80px' />

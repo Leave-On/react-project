@@ -1,10 +1,11 @@
-import { Popover } from 'shared/ui/Popups';
 import { NotificationsList } from 'entities/Notification';
-import { memo } from 'react';
+import { memo, useCallback, useState } from 'react';
+import NotificationsIcon from 'shared/assets/icons/bell.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Drawer } from 'shared/ui/Drawer/Drawer';
 import { Icon } from 'shared/ui/Icon/Icon';
-import NotificationsIcon from 'shared/assets/icons/bell.svg';
+import { Popover } from 'shared/ui/Popups';
 import cls from './NotificationsButton.module.scss';
 
 
@@ -15,16 +16,52 @@ interface NotificationsButtonProps {
 export const NotificationsButton = memo((props: NotificationsButtonProps) => {
     const { className } = props;
 
-    return (
+    const [isOpen, setIsOpen] = useState(false)
 
-        <Popover
-            className={classNames(cls.NotificationsButton, {}, [className])}
-            trigger={(
-                <Button theme={ButtonTheme.CLEAR}>
-                    <Icon Svg={NotificationsIcon} inverted />
-                </Button>
-            )} >
-            <NotificationsList className={cls.notifications} />
-        </Popover>
-    );
+    const onOpenDrawer = useCallback(() => {
+        console.log('click');
+
+        setIsOpen(true)
+    }, [])
+    const onCloseDrawer = useCallback(() => {
+        setIsOpen(false)
+    }, [])
+
+    function detectMobile() {
+        const isMobile = window.matchMedia
+        if (!isMobile) return false
+
+        const device = isMobile("(pointer:coarse)")
+        return device.matches
+    }
+
+    const trigger = (
+        <Button onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
+            <Icon Svg={NotificationsIcon} inverted />
+        </Button>
+    )
+
+    if (detectMobile()) {
+        return (
+            <>
+                {trigger}
+                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                    <NotificationsList />
+                </Drawer>
+            </>
+
+        )
+    } else {
+        return (
+            <div>
+                <Popover
+                    className={classNames(cls.NotificationsButton, {}, [className])}
+                    trigger={trigger} >
+                    <NotificationsList className={cls.notifications} />
+                </Popover>
+            </div>
+        );
+    }
+
+
 })

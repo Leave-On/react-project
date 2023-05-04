@@ -1,3 +1,4 @@
+import { NotificationsList } from "entities/Notification";
 import { getUserAuthData } from "entities/User";
 import { LoginModal } from "features/AuthByUsername";
 import { AvatarDropdown } from "features/AvatarDropdown";
@@ -9,6 +10,7 @@ import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Drawer } from "shared/ui/Drawer/Drawer";
 import { HStack } from "shared/ui/Stack";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import cls from './Navbar.module.scss';
@@ -32,7 +34,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const onShowModal = useCallback(() => {
         setIsAuthModal(true)
     }, [])
-
 
     if (authData) {
         return (
