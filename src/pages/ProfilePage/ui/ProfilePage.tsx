@@ -1,7 +1,7 @@
-import { EditableFrofileCard } from 'features/EditableFrofileCard';
+import { EditableFrofileCard } from '@/features/EditableFrofileCard';
 import { useParams } from 'react-router-dom';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Page } from 'widgets/Page/Page';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Page } from '@/widgets/Page/Page';
 
 interface ProfilePageProps {
   className?: string;

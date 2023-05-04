@@ -1,11 +1,12 @@
-import { NotificationsList } from 'entities/Notification';
+import { NotificationsList } from '@/entities/Notification';
 import { memo, useCallback, useState } from 'react';
-import NotificationsIcon from 'shared/assets/icons/bell.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Drawer } from 'shared/ui/Drawer/Drawer';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { Popover } from 'shared/ui/Popups';
+import NotificationsIcon from '@/shared/assets/icons/bell.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { Popover } from '@/shared/ui/Popups';
 import cls from './NotificationsButton.module.scss';
 
 
@@ -45,9 +46,12 @@ export const NotificationsButton = memo((props: NotificationsButtonProps) => {
         return (
             <>
                 {trigger}
-                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-                    <NotificationsList />
-                </Drawer>
+                <AnimationProvider>
+                    <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                        <NotificationsList />
+                    </Drawer>
+                </AnimationProvider>
+
             </>
 
         )

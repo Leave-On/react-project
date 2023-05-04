@@ -1,6 +1,6 @@
-import { ArticleSortField } from "entities/Article";
+import { ArticleSortField } from "@/entities/Article";
 import { useSearchParams } from "react-router-dom";
-import { TestAsyncThunk } from "shared/lib/tests/testAsyncThunk/TestAsyncThunk";
+import { TestAsyncThunk } from "@/shared/lib/tests/testAsyncThunk/TestAsyncThunk";
 import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
 import { initArticlesPage } from "./initArticlesPage";
 

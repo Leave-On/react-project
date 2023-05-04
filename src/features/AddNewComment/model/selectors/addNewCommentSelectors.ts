@@ -1,4 +1,4 @@
-import { StateScheme } from "app/providers/StoreProvider";
+import { StateScheme } from "@/app/providers/StoreProvider";
 
 export const getAddNewCommentText = (state: StateScheme) => state.addNewComment?.text ?? ''
 export const getAddNewCommentIsLoading = (state: StateScheme) => state.addNewComment?.isLoading
