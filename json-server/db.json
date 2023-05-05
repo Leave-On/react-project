@@ -616,5 +616,55 @@
       "description": "description",
       "userId": "2"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": 1,
+      "rate": 5,
+      "feedback": "Норм",
+      "userId": "1",
+      "articleId": 1
+    },
+    {
+      "id": 1,
+      "rate": 5,
+      "feedback": "Нормально",
+      "userId": "1",
+      "articleId": 2
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 4,
+      "id": 2
+    },
+    {
+      "userId": "1",
+      "articleId": "9",
+      "rate": 1,
+      "id": 3
+    },
+    {
+      "userId": "1",
+      "articleId": "13",
+      "rate": 2,
+      "id": 4
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": 1,
+      "rate": 5,
+      "feedback": "Норм",
+      "userId": "1",
+      "profileId": 1
+    },
+    {
+      "id": 1,
+      "rate": 5,
+      "feedback": "Нормально",
+      "userId": "1",
+      "profileId": 2
+    }
   ]
 }

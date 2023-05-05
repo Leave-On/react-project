@@ -1,12 +1,12 @@
 import { ArticleDetails } from '@/entities/Article';
+import { ArticleRating } from '@/features/ArticleRating';
 import { ArticleRecomendationsList } from '@/features/ArticleRecomendationsList';
-import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page/Page';
+import { FC, memo } from 'react';
+import { useParams } from 'react-router-dom';
 import { ArticleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHeader';
@@ -26,6 +26,9 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
     console.log('details');
 
+    if (!id) {
+        return null
+    }
 
     return (
         <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
@@ -33,6 +36,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                 <VStack gap='16' max>
                     <ArticleDetailsHeader />
                     <ArticleDetails articleId={id}/>
+                    <ArticleRating articleId={id} />
                     <ArticleRecomendationsList />
                     <ArticleDetailsComments articleId={id}/>
                 </VStack>

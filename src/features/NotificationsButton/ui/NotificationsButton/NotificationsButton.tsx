@@ -1,6 +1,7 @@
 import { NotificationsList } from '@/entities/Notification';
 import NotificationsIcon from '@/shared/assets/icons/bell.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { useDetectMobile } from '@/shared/lib/hooks/useDetectMobile/useDetectMobile';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
 import { Icon } from '@/shared/ui/Icon/Icon';
@@ -17,7 +18,7 @@ export const NotificationsButton = memo((props: NotificationsButtonProps) => {
     const { className } = props;
 
     const [isOpen, setIsOpen] = useState(false)
-
+    const isMobile = useDetectMobile()
     const onOpenDrawer = useCallback(() => {
         console.log('click');
 
@@ -27,21 +28,13 @@ export const NotificationsButton = memo((props: NotificationsButtonProps) => {
         setIsOpen(false)
     }, [])
 
-    function detectMobile() {
-        const isMobile = window.matchMedia
-        if (!isMobile) return false
-
-        const device = isMobile("(pointer:coarse)")
-        return device.matches
-    }
-
     const trigger = (
         <Button onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
             <Icon Svg={NotificationsIcon} inverted />
         </Button>
     )
 
-    if (detectMobile()) {
+    if (isMobile) {
         return (
             <>
                 {trigger}
