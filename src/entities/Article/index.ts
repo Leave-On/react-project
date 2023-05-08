@@ -5,11 +5,13 @@ import { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
 import { ArticleList } from './ui/ArticleList/ArticleList'
 import { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs'
 import { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector'
+import { ArticleDetailsReducer } from './model/slice/ArticleDetailsSlice'
 
 export {
     ArticleSortField,
     ArticleType,
-    ArticleView
+    ArticleView,
+    ArticleBlockType,
 } from './model/consts/consts'
 
 export type {
@@ -22,5 +24,6 @@ export {
     ArticleList,
     ArticleViewSelector,
     ArticleTypeTabs,
-    getArticleDetailsData
+    getArticleDetailsData,
+    ArticleDetailsReducer
 }

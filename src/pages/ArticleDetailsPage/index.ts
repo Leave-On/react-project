@@ -3,3 +3,5 @@ export type { ArticleDetailsRecommendationsScheme } from './model/types/ArticleD
 export type { ArticleDetailsPageSheme } from './model/types'
 
 export { ArticleDetailsPageAsync as ArticleDetailsPage } from './ui/ArticleDetailsPage/ArticleDetailsPage.async'
+
+export { ArticleDetailsPageReducer } from './model/slices/index'
