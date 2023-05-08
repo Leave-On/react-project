@@ -649,22 +649,45 @@
       "articleId": "13",
       "rate": 2,
       "id": 4
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 3,
+      "feedback": "",
+      "id": 5
     }
   ],
   "profile-ratings": [
     {
-      "id": 1,
-      "rate": 5,
-      "feedback": "Норм",
       "userId": "1",
-      "profileId": 1
+      "profileId": 1,
+      "rate": 5,
+      "id": 1
     },
     {
-      "id": 1,
-      "rate": 5,
-      "feedback": "Нормально",
       "userId": "1",
-      "profileId": 2
+      "profileId": "2",
+      "rate": 4,
+      "id": 3
+    },
+    {
+      "userId": "1",
+      "profileId": "1",
+      "rate": 3,
+      "id": 4
+    },
+    {
+      "userId": "1",
+      "profileId": "1",
+      "rate": 3,
+      "id": 5
+    },
+    {
+      "userId": "1",
+      "profileId": "1",
+      "rate": 3,
+      "id": 6
     }
   ]
 }

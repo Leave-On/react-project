@@ -52,11 +52,12 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
 
     return (
         <RatingCard
-            onAccept={onCancel}
-            onCancel={onAccept}
+            onAccept={onAccept}
+            onCancel={onCancel}
             rate={rating?.rate}
             className={className}
             title={t('Rate this article!')}
+            afterRatingText={t('Thanks for rating this article!') as string}
             feedbackTitle={t('Leave your feedback') as string}
             hasFeedback
         />

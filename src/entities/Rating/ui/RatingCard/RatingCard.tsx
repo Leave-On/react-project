@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 interface RatingCardProps {
    className?: string;
    title: string;
+   afterRatingText: string;
    feedbackTitle?: string;
    hasFeedback?: boolean;
    onCancel?: (starCount: number) => void;
@@ -29,6 +30,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
         onAccept,
         onCancel,
         title,
+        afterRatingText: afterSendTitle,
         rate = 0
     } = props;
 
@@ -63,7 +65,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
             <Input
                 value={feedback}
                 onChange={setFeddback}
-                placeholder={t('Yor feedback') as string}
+                placeholder={t('Your feedback') as string}
             />
         </>
 
@@ -75,7 +77,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
         <Card className={className} max>
             <VStack align='center' gap='8' max>
                 <Text
-                    title={starsCount ? t('Thanks for rating this article!') as string : title}
+                    title={starsCount ? afterSendTitle : title}
                 />
                 <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
             </VStack>
