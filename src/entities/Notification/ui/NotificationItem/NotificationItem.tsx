@@ -1,4 +1,4 @@
-import { Notification } from '@/entities/Notification/model/types/notification';
+import { Notification } from '../../model/types/notification';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card, CardTheme } from '@/shared/ui/Card/Card';
