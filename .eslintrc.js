@@ -54,7 +54,20 @@ module.exports = {
         "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
         "indent": ["error", 4],
         "relative-path-checker/path-checker": ["error", { alias: '@' }],
-        "relative-path-checker/public-api-imports": ["error", { alias: '@' }],
+        "relative-path-checker/control-layer-imports": [
+            'error',
+            {
+                alert: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+            }
+        ],
+        "relative-path-checker/public-api-imports": [
+            "error",
+            {
+                alias: '@',
+                testFiles: ['**/*.test.ts', '**/*.story.ts', '**/StoreDecorator']
+            }
+        ],
 
     }
 }

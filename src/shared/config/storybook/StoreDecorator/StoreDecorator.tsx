@@ -1,12 +1,11 @@
 import { ReducersMapObject } from '@reduxjs/toolkit';
-
 import { Story } from '@storybook/react';
 import { StateScheme, StoreProvider } from '@/app/providers/StoreProvider';
-import { ArticleDetailsReducer } from '@/entities/Article';
-import { addNewCommentReducer } from '@/features/AddNewComment';
-import { loginReducer } from '@/features/AuthByUsername';
-import { profileReducer } from '@/features/EditableFrofileCard';
-import { ArticleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
+import { loginReducer } from '@/features/AuthByUsername/testing';
+import { ArticleDetailsReducer } from '@/entities/Article/testing';
+import { addNewCommentReducer } from '@/features/AddNewComment/testing';
+import { profileReducer } from '@/features/EditableFrofileCard/testing';
+import { ArticleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateScheme>> = {
     loginForm: loginReducer,

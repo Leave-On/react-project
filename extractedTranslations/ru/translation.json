@@ -2,6 +2,7 @@
   "Admin": "",
   "Articles not found": "",
   "Auth from": "",
+  "Close": "",
   "Comments": "",
   "Create": "",
   "Create article": "",
@@ -9,16 +10,21 @@
   "Enter": "",
   "Enter name": "",
   "Enter password": "",
+  "Feedback give": "",
   "IT": "",
+  "Leave your feedback": "",
   "Main page": "",
   "No acccess": "",
   "No comments yet": "",
   "Profile": "",
   "Publish": "",
   "Quit": "",
+  "Rate this article!": "",
+  "Rate this profile!": "",
   "React PrOjEcT": "",
   "Read more": "",
   "Recommended articles": "",
+  "Send": "",
   "Something's wrong": {
     "": {
       "": {
@@ -26,7 +32,11 @@
       }
     }
   },
+  "Thanks for rating this article!": "",
+  "Thanks for rating this profile!": "",
+  "Title": "",
   "Wrong Login or password": "",
+  "Your feedback": "",
   "all": "",
   "any-thoughts": "",
   "decrement": "",

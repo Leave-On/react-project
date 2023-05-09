@@ -1,8 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
 import { AppLink, AppLinkTheme } from './AppLink';
+import { Theme } from '@/shared/const/theme';
 
 export default {
     title: 'shared/AppLink',
@@ -61,5 +60,3 @@ RedDark.args =  {
 };
 
 RedDark.decorators = [ThemeDecorator(Theme.DARK)]
-
-

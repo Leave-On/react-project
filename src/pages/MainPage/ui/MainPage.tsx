@@ -23,6 +23,7 @@ const MainPage = () => {
                 title={t('Title') as string}
                 feedbackTitle={t('Feedback give') as string}
                 hasFeedback
+                afterRatingText=""
             />
         </Page>
     );

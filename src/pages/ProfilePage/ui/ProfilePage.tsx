@@ -18,7 +18,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
     return (
         <Page className={classNames('', {}, [className])}>
-            <ProfileRating profileId={id} />
+            {/* <ProfileRating profileId={id} /> */}
             <EditableFrofileCard id={id}/>
         </Page>
     );
