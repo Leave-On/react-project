@@ -66,7 +66,7 @@ module.exports = {
             "error",
             {
                 alias: '@',
-                testFiles: ['**/*.test.ts', '**/*.story.ts', '**/StoreDecorator']
+                testFiles: ['**/*.testing.ts', '**/*.test.ts', '**/StoreDecorator.tsx', '**/*.stories.ts']
             }
         ],
         "unused-imports/no-unused-imports": "error",
