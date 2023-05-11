@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { HStack } from "@/shared/ui/Stack";
 import { Page } from "@/widgets/Page";
-import { StarRating } from "@/shared/ui/StarRating/StarRating";
 import { RatingCard } from "@/entities/Rating";
 
 const MainPage = () => {

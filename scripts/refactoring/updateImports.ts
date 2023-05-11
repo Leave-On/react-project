@@ -1,3 +1,5 @@
+// adds alias @ to absolute imports
+
 import { Project } from 'ts-morph'
 
 const project = new Project({})

@@ -7,6 +7,9 @@ export default defineConfig({
         svgr({ exportAsDefault: true }),
         react()
     ],
+    server: {
+        open: true,
+    },
     css: {
         modules: {
             generateScopedName: '[path][name]__[local]--[hash:base64:5]',

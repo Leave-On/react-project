@@ -1,4 +1,3 @@
-import { loginByUsername } from "../services/loginByUsername/loginByUsername"
 import { LoginScheme } from "../types/LoginScheme"
 import { loginActions, loginReducer } from "./loginSlice"
 

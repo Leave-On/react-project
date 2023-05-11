@@ -1,7 +1,7 @@
 import { RouteConfig } from "../config/routeConfig";
 import { RequireAuth } from './RequireAuth';
 import { AppRouteProps } from "@/shared/types/router";
-import { Loader } from '@/shared/ui/Loader/Loader';
+import { Loader } from '@/shared/ui/Loader';
 import { memo, Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
 

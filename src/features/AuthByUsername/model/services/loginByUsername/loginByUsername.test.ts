@@ -1,7 +1,4 @@
-import { StateScheme } from "@/app/providers/StoreProvider"
-import axios from "axios"
 import { userActions } from "@/entities/User"
-import { Dispatch } from "react"
 import { TestAsyncThunk } from "@/shared/lib/tests/testAsyncThunk/TestAsyncThunk"
 import { loginByUsername } from "./loginByUsername"
 

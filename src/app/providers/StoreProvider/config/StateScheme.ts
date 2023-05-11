@@ -7,7 +7,6 @@ import { addNewCommentScheme } from "@/features/AddNewComment";
 import { LoginScheme } from "@/features/AuthByUsername";
 import { ProfileScheme } from "@/features/EditableFrofileCard";
 import { ScrollSaveScheme } from "@/features/ScrollSave";
-import { ArticleDetailsCommentsScheme, ArticleDetailsRecommendationsScheme } from "@/pages/ArticleDetailsPage";
 import { ArticleDetailsPageSheme } from "@/pages/ArticleDetailsPage";
 import { ArticlesPageScheme } from "@/pages/ArticlePage";
 import { rtkApi } from "@/shared/api/rtkApi";

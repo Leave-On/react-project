@@ -36,7 +36,8 @@ module.exports = {
         "@typescript-eslint",
         "i18next",
         "react-hooks",
-        "relative-path-checker"
+        "relative-path-checker",
+        "unused-imports"
     ],
     "rules": {
         "i18next/no-literal-string": [
@@ -68,6 +69,7 @@ module.exports = {
                 testFiles: ['**/*.test.ts', '**/*.story.ts', '**/StoreDecorator']
             }
         ],
+        "unused-imports/no-unused-imports": "error",
 
     }
 }
