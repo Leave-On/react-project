@@ -1,3 +1,4 @@
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArticleInfiniteList } from './ArticleInfiniteList';
 
@@ -7,6 +8,7 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [StoreDecorator({})]
 } as ComponentMeta<typeof ArticleInfiniteList>;
 
 const Template: ComponentStory<typeof ArticleInfiniteList> = (args) => <ArticleInfiniteList { ...args } />;
