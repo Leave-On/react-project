@@ -19,14 +19,13 @@ import { getProfileValidateErrors } from '../../model/selectors/getProfileValida
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/ProfileSlice';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import cls from './EditableFrofileCard.module.scss';
 
-interface EditableFrofileCardProps {
+interface EditableProfileCardProps {
    className?: string;
    id?: string;
 }
 
-export const EditableProfileCard = memo((props: EditableFrofileCardProps) => {
+export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const { className, id } = props;
     const { t } = useTranslation('profile')
     const dispatch = useAppDispatch()
@@ -94,7 +93,7 @@ export const EditableProfileCard = memo((props: EditableFrofileCardProps) => {
             <VStack
                 gap='8'
                 max
-                className={classNames(cls.EditableFrofileCard, {}, [className])}
+                className={classNames('', {}, [className])}
             >
                 <EditableProfileCardHeader />
                 {validateErrors?.length && validateErrors.map((e:ValidateProfileError) => (
@@ -102,7 +101,7 @@ export const EditableProfileCard = memo((props: EditableFrofileCardProps) => {
                         theme={TextTheme.ERROR}
                         text={validateErrorsTranslate[e]}
                         key={e}
-                        data-testid={'EditableFrofileCard.Error'}
+                        data-testid={'EditableProfileCard.Error'}
                     />
                 ))}
                 <ProfileCard

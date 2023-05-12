@@ -5,7 +5,7 @@ import { CounterScheme } from "@/entities/Counter";
 import { UserScheme } from "@/entities/User";
 import { addNewCommentScheme } from "@/features/AddNewComment";
 import { LoginScheme } from "@/features/AuthByUsername";
-import { ProfileScheme } from "@/features/EditableFrofileCard";
+import { ProfileScheme } from "@/features/EditableProfileCard";
 import { ScrollSaveScheme } from "@/features/ScrollSave";
 import { ArticleDetailsPageSheme } from "@/pages/ArticleDetailsPage";
 import { ArticlesPageScheme } from "@/pages/ArticlePage";

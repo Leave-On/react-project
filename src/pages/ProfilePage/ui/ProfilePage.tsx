@@ -1,4 +1,4 @@
-import { EditableFrofileCard } from '@/features/EditableFrofileCard';
+import { EditableProfileCard } from '@/features/EditableProfileCard';
 import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets/Page';
@@ -18,7 +18,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     return (
         <Page className={classNames('', {}, [className])}>
             {/* <ProfileRating profileId={id} /> */}
-            <EditableFrofileCard id={id}/>
+            <EditableProfileCard id={id}/>
         </Page>
     );
 }

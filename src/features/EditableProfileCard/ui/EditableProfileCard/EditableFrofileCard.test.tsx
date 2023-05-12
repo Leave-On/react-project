@@ -34,7 +34,7 @@ const options = {
     }
 }
 
-describe('features/EditableFrofileCard',  () => {
+describe('features/EditableProfileCard',  () => {
     test('Toggle readonly mode', async () => {
         componentRender(<EditableProfileCard id={'1'}/>, options)
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditBtn'))
@@ -68,7 +68,7 @@ describe('features/EditableFrofileCard',  () => {
 
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.SaveBtn'))
 
-        expect(screen.getByTestId('EditableFrofileCard.Error.Paragraph')).toBeInTheDocument()
+        expect(screen.getByTestId('EditableProfileCard.Error.Paragraph')).toBeInTheDocument()
     })
 
     test('Send PUT request if there is no Error', async () => {
