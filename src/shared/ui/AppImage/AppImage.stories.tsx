@@ -5,7 +5,7 @@ export default {
     title: 'shared/AppImage',
     component: AppImage,
     argTypes: {
-       backgroundColor: { control: 'color' },
+        backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof AppImage>;
 
