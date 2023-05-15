@@ -1,6 +1,7 @@
 import webpack from "webpack";
 import { buildBabelLoader } from "./loaders/buildBabelLoader";
 import { buildCssLoader } from "./loaders/buildCssLoader";
+import { buildFileLoader } from "./loaders/buildFileLoader";
 import { BuildOptions } from "./types/config";
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
@@ -22,14 +23,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     //     exclude: /node_modules/,
     // }
 
-    const fileLoader = {
-        test: /\.(png|jpe?g|gif|woff2|woff|eot|ttf)$/i,
-        use: [
-            {
-                loader: 'file-loader',
-            },
-        ],
-    }
+    const fileLoader = buildFileLoader()
 
     return [
         svgLoader,

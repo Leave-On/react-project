@@ -32,6 +32,16 @@ export default ({ config }: {config: webpack.Configuration}) => {
     }
 
     config!.module!.rules!.push({
+        test: /\.(woff2|woff|eot|ttf)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+        include: path.resolve(__dirname, '../')
+    })
+
+    config!.module!.rules!.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     })
