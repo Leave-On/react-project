@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { HStack } from "@/shared/ui/Stack";
 import { Page } from "@/widgets/Page";
-import { RatingCard } from "@/entities/Rating";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const MainPage = () => {
     const { t } = useTranslation()
@@ -12,18 +11,12 @@ const MainPage = () => {
         setValue(val)
     }
     return (
-        <Page>
+        <Page data-testid="MainPage">
             {t('Main page')}
             <HStack>
                 <div>{t('login: user - password: 123')}</div>
 
             </HStack>
-            <RatingCard
-                title={t('Title') as string}
-                feedbackTitle={t('Feedback give') as string}
-                hasFeedback
-                afterRatingText=""
-            />
         </Page>
     );
 };

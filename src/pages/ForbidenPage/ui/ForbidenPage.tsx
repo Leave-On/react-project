@@ -1,20 +1,20 @@
-import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets/Page';
+import { useTranslation } from 'react-i18next';
 
-interface ForbidenPagePageProps {
+interface ForbiddenPagePageProps {
    className?: string;
 }
 
-const ForbidenPage = (props: ForbidenPagePageProps) => {
+const ForbiddenPage = (props: ForbiddenPagePageProps) => {
     const { className } = props;
     const { t } = useTranslation()
 
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page data-testid='ForbiddenPage' className={classNames('', {}, [className])}>
             {t('No acccess')}
         </Page>
     );
 }
 
-export default ForbidenPage
+export default ForbiddenPage

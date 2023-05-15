@@ -6,15 +6,6 @@
 import path from "path";
 
 export default {
-    // All imported modules in your tests should be mocked automatically
-    // automock: false,
-
-    // Stop running tests after `n` failures
-    // bail: 0,
-
-    // The directory where Jest should store its cached dependency information
-    // cacheDirectory: "C:\\Users\\Levon\\AppData\\Local\\Temp\\jest",
-
     // Automatically clear mock calls, instances, contexts and results before every test
     clearMocks: true,
     // The test environment that will be used for testing
@@ -41,11 +32,9 @@ export default {
         "json",
         "node"
     ],
-    // The glob patterns Jest uses to detect test files
     testMatch: [
         "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"
     ],
-    // The root directory that Jest should scan for tests and modules within
     rootDir: '../../',
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     moduleNameMapper: {
@@ -53,8 +42,6 @@ export default {
         '\\.svg': path.resolve(__dirname, 'JestEmptyComponent.tsx'),
         '^@/(.*)$': '<rootDir>src/$1',
     },
-    // A set of global variables that need to be available in all test environments
-
     globals: {
         "__IS_DEV__": true,
         "__API__": '',
@@ -68,7 +55,15 @@ export default {
             // "openReport": true,
             "inlineSource": true
         }]
-    ]
+    ],
+    // All imported modules in your tests should be mocked automatically
+    // automock: false,
+
+    // Stop running tests after `n` failures
+    // bail: 0,
+
+    // The directory where Jest should store its cached dependency information
+    // cacheDirectory: "C:\\Users\\Levon\\AppData\\Local\\Temp\\jest",
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
