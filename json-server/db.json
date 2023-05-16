@@ -570,7 +570,8 @@
       "username": "test",
       "password": "123",
       "roles": [
-        "MANAGER", "ADMIN"
+        "MANAGER",
+        "ADMIN"
       ],
       "avatar": ""
     }
@@ -599,7 +600,7 @@
       "country": "Armenia"
     },
     {
-      "id": "3",
+      "id": "4",
       "firstname": "test",
       "lastname": "test",
       "age": 0,

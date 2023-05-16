@@ -1,7 +1,3 @@
-import { ArticleBlockType } from '../../model/consts/consts';
-import { memo, useCallback, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import DateIcon from '@/shared/assets/icons/date.svg';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -12,6 +8,10 @@ import { Icon } from '@/shared/ui/Icon';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text';
+import { memo, useCallback, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { ArticleBlockType } from '../../model/consts/consts';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
@@ -91,7 +91,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 <HStack max justify={'center'} className={cls.avatarWrapper}>
                     <Avatar size={200} src={article?.img} className={cls.avatar} />
                 </HStack>
-                <VStack gap={'4'} max>
+                <VStack gap={'4'} max data-testid='ArticleDetails.info'>
                     <Text className={cls.title} title={article?.title} text={article?.subtitle} size={TextSize.L}/>
                     <HStack max className={cls.articleInfo}>
                         <Icon Svg={EyeIcon} className={cls.icon} />
@@ -110,7 +110,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-            <VStack gap={'16'} max className={classNames(cls.ArticleDetails, {}, [className])}>
+            <VStack
+                gap={'16'}
+                max
+                className={classNames(cls.ArticleDetails, {}, [className])}
+                data-testid='ArticleDetails'
+            >
                 {content}
             </VStack>
         </DynamicModuleLoader>

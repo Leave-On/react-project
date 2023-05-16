@@ -62,6 +62,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
         <>
             <Text title={feedbackTitle} />
             <Input
+                data-testid='RatingCard.input'
                 value={feedback}
                 onChange={setFeddback}
                 placeholder={t('Your feedback') as string}
@@ -73,7 +74,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
     console.log(isMobile ? 'on mobile' : 'on desktop');
 
     return (
-        <Card className={className} max>
+        <Card className={className} max data-testid='RatingCard'>
             <VStack align='center' gap='8' max>
                 <Text
                     title={starsCount ? afterSendTitle : title}
@@ -84,7 +85,12 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 <Drawer isOpen={isModalOpen} lazy onClose={cancelHandler}>
                     <VStack gap='32'>
                         {modalContent}
-                        <Button onClick={acceptHandler} size={ButtonSize.L} fullWidth>
+                        <Button
+                            data-testid='RatingCard.sendBtn'
+                            onClick={acceptHandler}
+                            size={ButtonSize.L}
+                            fullWidth
+                        >
                             {t('Send')}
                         </Button>
                     </VStack>
@@ -98,10 +104,12 @@ export const RatingCard = memo((props: RatingCardProps) => {
                             <Button
                                 onClick={cancelHandler}
                                 theme={ButtonTheme.OUTLINED_RED}
+                                data-testid='RatingCard.closeBtn'
                             >{t('Close')}
                             </Button>
                             <Button
                                 onClick={acceptHandler}
+                                data-testid='RatingCard.sendBtn'
                             >{t('Send')}
                             </Button>
                         </HStack>
