@@ -1,11 +1,12 @@
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from "@/shared/const/router";
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 interface AvatarDropdownProps {
    className?: string;
@@ -16,7 +17,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     const { className } = props;
 
     const { t } = useTranslation()
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const authData = useSelector(getUserAuthData)
     const isAdmin = useSelector(isUserAdmin)
     const isManager = useSelector(isUserManager)

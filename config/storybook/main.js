@@ -1,22 +1,26 @@
 module.exports = {
-    "stories": [
-        "../../src/**/*.stories.@(js|jsx|ts|tsx)"
-    ],
+    "stories": ["../../src/**/*.stories.@(js|jsx|ts|tsx)"],
     "addons": [
         "@storybook/addon-links",
         {
             name: '@storybook/addon-essentials',
             options: {
-                backgrounds: false,
-            },
+                backgrounds: false
+            }
         },
         "@storybook/addon-interactions",
         "storybook-addon-mock",
         "storybook-addon-themes"
     ],
-    "framework": "@storybook/react",
-    "core": {
-        "builder": "webpack5"
+    "framework": {
+        name: "@storybook/react-webpack5",
+        options: {}
     },
-    staticDirs: ['../public']
-}
+    staticDirs: ['../public'],
+    docs: {
+        autodocs: true
+    },
+    features: {
+        storyStoreV7: false,
+    },
+};

@@ -1,6 +1,5 @@
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import withMock from 'storybook-addon-mock';
+import { Meta, StoryFn } from '@storybook/react';
 import ArticleRating from './ArticleRating';
 
 export default {
@@ -15,11 +14,10 @@ export default {
                 authData: { id: '1' }
             }
         }),
-        withMock
     ]
-} as ComponentMeta<typeof ArticleRating>;
+} as Meta<typeof ArticleRating>;
 
-const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating { ...args } />;
+const Template: StoryFn<typeof ArticleRating> = (args) => <ArticleRating { ...args } />;
 
 export const Normal = Template.bind({});
 Normal.args = {
