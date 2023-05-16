@@ -564,6 +564,15 @@
         "MANAGER"
       ],
       "avatar": "https://64.media.tumblr.com/93190ae13550e9109579481f51591a60/tumblr_nkqm6zIXPb1rpwm80o1_250.jpg"
+    },
+    {
+      "id": "4",
+      "username": "test",
+      "password": "123",
+      "roles": [
+        "MANAGER", "ADMIN"
+      ],
+      "avatar": ""
     }
   ],
   "profile": [
@@ -586,6 +595,17 @@
       "city": "Moscow",
       "username": "powerRanger",
       "avatar": "https://64.media.tumblr.com/93190ae13550e9109579481f51591a60/tumblr_nkqm6zIXPb1rpwm80o1_250.jpg",
+      "currency": "EUR",
+      "country": "Armenia"
+    },
+    {
+      "id": "3",
+      "firstname": "test",
+      "lastname": "test",
+      "age": 0,
+      "city": "Test",
+      "username": "test",
+      "avatar": "",
       "currency": "EUR",
       "country": "Armenia"
     }
