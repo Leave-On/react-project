@@ -467,6 +467,19 @@
           ]
         }
       ]
+    },
+    {
+      "title": "TESTING ARTICLE!!!",
+      "subtitle": "Just stop being delusional.",
+      "img": "https://avatars.mds.yandex.net/i?id=3e5a66ce8f8bfc513a3385d70a7605bf737a0780-4140339-images-thumbs&n=13",
+      "views": 1712,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "35cddRt"
     }
   ],
   "comments": [

@@ -1,6 +1,6 @@
-import { selectByTestId } from 'cypress/helpers/selectByTestId'
 import { User } from '../../../src/entities/User'
 import { USER_LOCALSTORAGE_KEY } from "../../../src/shared/const/localstorage"
+import { selectByTestId } from '../../helpers/selectByTestId'
 
 export const login = (username = 'test', password = '123') => {
     return cy.request({

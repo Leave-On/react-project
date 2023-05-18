@@ -12,5 +12,4 @@ Cypress.Commands.addAll(ratingCommands)
 
 
 
-
 export { }
