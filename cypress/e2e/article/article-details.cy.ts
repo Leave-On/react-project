@@ -11,6 +11,7 @@ describe('User visiting article details page', () => {
     afterEach(() => {
         cy.removeArticle(currentArticleId)
     })
+
     it('and article content is loaded', () => {
         cy.getByTestId('ArticleDetails.info').should('exist')
     })
@@ -25,6 +26,14 @@ describe('User visiting article details page', () => {
 
     })
     it('and rates the article', () => {
+        cy.getByTestId('ArticleDetails.info')
+        cy.getByTestId('RatingCard').scrollIntoView()
+        cy.setRate(4, 'feedback')
+        cy.get('[data-selected=true]').should('have.length', 4)
+
+    })
+    it('rates the article with stubs (fixtures)', () => {
+        cy.intercept('GET', '**/articles/*', { fixture:  'article-details.json' })
         cy.getByTestId('ArticleDetails.info')
         cy.getByTestId('RatingCard').scrollIntoView()
         cy.setRate(4, 'feedback')
