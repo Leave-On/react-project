@@ -57,7 +57,6 @@ module.exports = {
             testFilesPatterns: ['**/*.test.*', '**/StoreDecorator.tsx', '**/*.stories.*']
         }],
         "unused-imports/no-unused-imports": "error",
-        "react/jsx-max-props-per-line": [1, {"maximum": 3}]
-
+        // "react/jsx-max-props-per-line": [1, {"maximum": 3}]
     }
 };

@@ -1,13 +1,17 @@
 import { ArticleDetails } from '@/entities/Article';
-import { Counter } from '@/entities/Counter';
 import { ArticleRating } from '@/features/ArticleRating';
 import { ArticleRecomendationsList } from '@/features/ArticleRecomendationsList';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { getFeatureFlags } from '@/shared/lib/features';
+import {
+    DynamicModuleLoader,
+    ReducerList
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { toggleFeatures } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
 import { FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { ArticleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
@@ -15,39 +19,41 @@ import { ArticleDetailsHeader } from '../ArticleDetailsHeader/ArticleDetailsHead
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
-   className?: string;
+	className?: string;
 }
 
 const reducer: ReducerList = {
-    articleDetailsPage: ArticleDetailsPageReducer
-}
+	articleDetailsPage: ArticleDetailsPageReducer,
+};
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
-    const { className } = props;
-    const { id } = useParams<{ id: string }>()
-    const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled')
-    const isCounterEnabled = getFeatureFlags('isCounterEnabled')
-    console.log('details');
+	const { className } = props;
+	const { id } = useParams<{ id: string }>();
+	const { t } = useTranslation('article');
 
-    if (!id) {
-        return null
-    }
+	if (!id) {
+		return null;
+	}
 
-    return (
-        <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
-            <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-                <VStack gap='16' max>
-                    <ArticleDetailsHeader />
-                    <ArticleDetails articleId={id}/>
-                    {isCounterEnabled && <Counter />}
-                    {isArticleRatingEnabled && <ArticleRating articleId={id} />}
-                    <ArticleRecomendationsList />
-                    <ArticleDetailsComments articleId={id}/>
-                </VStack>
-            </Page>
-        </DynamicModuleLoader>
+	const ArticleRatingCard = toggleFeatures({
+		name: 'isArticleRatingEnabled',
+		on: () => <ArticleRating articleId={id} />,
+		off: () => <Card>{t('Article rating will be available soon')}</Card>,
+	});
 
-    );
-}
+	return (
+		<DynamicModuleLoader reducers={reducer} removeAfterUnmount>
+			<Page className={classNames(cls.articleDetailsPage, {}, [className])}>
+				<VStack gap="16" max>
+					<ArticleDetailsHeader />
+					<ArticleDetails articleId={id} />
+					{ArticleRatingCard}
+					<ArticleRecomendationsList />
+					<ArticleDetailsComments articleId={id} />
+				</VStack>
+			</Page>
+		</DynamicModuleLoader>
+	);
+};
 
-export default memo(ArticleDetailsPage)
+export default memo(ArticleDetailsPage);
