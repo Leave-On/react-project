@@ -3,10 +3,10 @@ import { ArticleRating } from '@/features/ArticleRating';
 import { ArticleRecomendationsList } from '@/features/ArticleRecomendationsList';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
-    DynamicModuleLoader,
-    ReducerList
+	DynamicModuleLoader,
+	ReducerList
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/Card';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
@@ -47,7 +47,11 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 				<VStack gap="16" max>
 					<ArticleDetailsHeader />
 					<ArticleDetails articleId={id} />
-					{ArticleRatingCard}
+					<ToggleFeatures
+						feature='isArticleRatingEnabled'
+						on={<ArticleRating articleId={id} />}
+						off={<Card>{t('Article rating will be available soon')}</Card>}
+					/>
 					<ArticleRecomendationsList />
 					<ArticleDetailsComments articleId={id} />
 				</VStack>

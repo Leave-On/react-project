@@ -27,7 +27,8 @@
     "storybook:build": "storybook build -c ./config/storybook",
     "prepare": "husky install",
     "chromatic": "npx chromatic --project-token=bf7b17a3c3c3",
-    "postinstall": "node ./scripts/clear-cache.js"
+    "postinstall": "node ./scripts/clear-cache.js",
+    "remove-feature": "npx ts-node ./scripts/remove-feature.ts"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": "eslint --fix"
