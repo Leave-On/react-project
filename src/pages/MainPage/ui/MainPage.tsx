@@ -1,4 +1,4 @@
-import { HStack } from "@/shared/ui/Stack";
+import { HStack } from "@/shared/ui/deprecated/Stack";
 import { Page } from "@/widgets/Page";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";

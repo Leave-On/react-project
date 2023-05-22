@@ -2,10 +2,10 @@ import { NotificationsList } from '@/entities/Notification';
 import NotificationsIcon from '@/shared/assets/icons/bell.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useDetectMobile } from '@/shared/lib/hooks/useDetectMobile/useDetectMobile';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Drawer } from '@/shared/ui/Drawer';
-import { Icon } from '@/shared/ui/Icon';
-import { Popover } from '@/shared/ui/Popups';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Popover } from '@/shared/ui/deprecated/Popups';
 import { memo, useCallback, useState } from 'react';
 import cls from './NotificationsButton.module.scss';
 

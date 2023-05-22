@@ -1,9 +1,9 @@
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Button } from "@/shared/ui/deprecated/Button";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { Button } from "@/shared/ui/Button";
 import { getCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
 import { counterActions } from "../model/slice/counterSlice";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 
 
