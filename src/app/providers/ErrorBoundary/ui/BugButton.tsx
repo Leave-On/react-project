@@ -1,4 +1,4 @@
-import { Button } from '@/shared/ui/deprecated/Button';
+import { Button } from '@/shared/ui/redesign/Button';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 

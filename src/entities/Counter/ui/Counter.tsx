@@ -1,5 +1,5 @@
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Button } from "@/shared/ui/deprecated/Button";
+import { Button } from "@/shared/ui/redesign/Button";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { getCounterValue } from "../model/selectors/getCounterValue/getCounterValue";

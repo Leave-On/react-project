@@ -1,10 +1,12 @@
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import ArrowIcon from '@/shared/assets/icons/arrow.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { VStack } from '@/shared/ui/deprecated/Stack';
+import { AppLogo } from '@/shared/ui/redesign/AppLogo';
+import { Icon } from '@/shared/ui/redesign/Icon';
 import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
@@ -61,9 +63,25 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             on={
                 <section
                     data-testid='sidebar'
-                    className={classNames(cls.SidebarRedesigned, { [cls.collapsed]: collapsed }, [className])}
+                    className={classNames(cls.SidebarRedesigned, { [cls.collapsedRedesigned]: collapsed }, [className])}
                 >
-                    <AppLogo className={cls.appLogo} />
+                    <AppLogo className={cls.appLogo} size={collapsed ? 32 : 54} />
+                    <VStack role={'navigation'} gap='8' className={cls.itemsRedesigned}>
+                        {itemsList}
+                    </VStack>
+                    <Icon
+                        data-testid='sidebar-toggle'
+                        onClick={onToggle}
+                        className={cls.collapseBtn}
+                        Svg={ArrowIcon}
+                        width={16}
+                        height={16}
+                        clickable
+                    />
+                    <div className={cls.switchers}>
+                        <ThemeSwitcher/>
+                        <LangSwitcher short={collapsed} className={cls.lang}/>
+                    </div>
                 </section>
             }
         />
