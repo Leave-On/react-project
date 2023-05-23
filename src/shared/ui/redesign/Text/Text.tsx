@@ -1,4 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { DefaultTFuncReturn } from 'i18next';
 import { memo } from 'react';
 import cls from './Text.module.scss';
 
@@ -10,8 +11,8 @@ export type TextSize = 's' | 'm' | 'l'
 
 interface TextProps {
   className?: string;
-  title?: string;
-  text?: string;
+  title?: DefaultTFuncReturn | string;
+  text?: DefaultTFuncReturn | string;
   variant?: TextVariant;
   align?: TextAlign;
   size?: TextSize;

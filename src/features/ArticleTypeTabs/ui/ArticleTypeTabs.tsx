@@ -1,6 +1,8 @@
 import { ArticleType } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { TabItem, Tabs } from '@/shared/ui/deprecated/Tabs';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { TabItem, Tabs as TabsDeprecated } from '@/shared/ui/deprecated/Tabs';
+import { Tabs } from '@/shared/ui/redesign/Tabs';
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -39,11 +41,26 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
     }, [onChangeType])
 
     return (
-        <Tabs
-            className={classNames('', {}, [className])}
-            onTabClick={onTabClick}
-            tabs={typeTabs}
-            value={value}
+        <ToggleFeatures
+            feature='isAppRedesigned'
+            off={
+                <TabsDeprecated
+                    className={classNames('', {}, [className])}
+                    onTabClick={onTabClick}
+                    tabs={typeTabs}
+                    value={value}
+                />
+            }
+            on={
+                <Tabs
+                    className={classNames('', {}, [className])}
+                    onTabClick={onTabClick}
+                    tabs={typeTabs}
+                    value={value}
+                    direction='column'
+                />
+            }
         />
+
     );
 })

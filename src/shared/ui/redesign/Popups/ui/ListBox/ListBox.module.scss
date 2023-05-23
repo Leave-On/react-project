@@ -8,4 +8,21 @@
 
 .item {
     padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    min-width: min-content;
+}
+
+.item:hover {
+    cursor: pointer;
+}
+
+.selected {
+    background: var(--light-bg-redesigned);
+}
+
+.icon {
+    color: var(--dark-bg-redesigned);
 }

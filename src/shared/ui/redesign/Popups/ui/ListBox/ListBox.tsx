@@ -1,31 +1,33 @@
+import DoneIcon from '@/shared/assets/icons/done.svg'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { DropdownDirection } from '@/shared/types/ui'
 import { Listbox as HListBox } from '@headlessui/react'
-import { Fragment, ReactNode, useState } from 'react'
+import { Fragment, ReactNode, useMemo, useState } from 'react'
 import { Button } from '../../../../redesign/Button/Button'
+import { Icon } from '../../../Icon'
 import { HStack } from '../../../Stack'
 import { mapDirectionClass } from '../../styles/consts'
 import popupCls from '../../styles/Popup.module.scss'
 import cls from './ListBox.module.scss'
 
-export interface ListBoxItem {
+export interface ListBoxItem<T extends string> {
     value: string;
     content: ReactNode;
     disabled?: boolean;
 }
 
-interface ListBoxProps {
-    items?: ListBoxItem[];
+interface ListBoxProps<T extends string> {
+    items?: ListBoxItem<T>[];
     className?: string;
-    value?: string;
+    value?: T;
     defaultValue?: string;
-    onChange: (value: string) => void;
+    onChange: (value: T) => void;
     readonly?: boolean;
     direction?: DropdownDirection;
     label?: string;
 }
 
-export function ListBox(props: ListBoxProps) {
+export function ListBox<T extends string>(props: ListBoxProps<T>) {
     const {
         className,
         items,
@@ -42,6 +44,9 @@ export function ListBox(props: ListBoxProps) {
 
     const optionsClasses = [mapDirectionClass[direction], popupCls.menu]
 
+    const selectedItem = useMemo(() => {
+        return items?.find(item => item.value === value)
+    }, [items, value])
 
     return (
         <HStack gap={'4'}>
@@ -54,8 +59,8 @@ export function ListBox(props: ListBoxProps) {
                 disabled={readonly}
             >
                 <HListBox.Button className={popupCls.trigger}>
-                    <Button disabled={readonly}>
-                        {value ?? defaultValue}
+                    <Button variant='filled' disabled={readonly}>
+                        {selectedItem?.content ?? defaultValue}
                     </Button>
                 </HListBox.Button>
                 <HListBox.Options className={classNames(cls.options, {}, optionsClasses)}>
@@ -72,12 +77,13 @@ export function ListBox(props: ListBoxProps) {
                                         cls.item,
                                         {
                                             [popupCls.active]: active,
-                                            [popupCls.disabled]: item.disabled
+                                            [popupCls.disabled]: item.disabled,
+                                            [popupCls.selected]: selected
                                         },
                                         []
                                     ) }
                                 >
-                                    {selected && ' this  -->'}
+                                    {selected && <Icon Svg={DoneIcon} width={24} height={24} className={cls.icon} />}
                                     {item.content}
                                 </li>
                             )}

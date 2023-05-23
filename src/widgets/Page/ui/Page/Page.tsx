@@ -26,10 +26,16 @@ export const Page = (props: PageProps) => {
     const { pathname } = useLocation()
     const scrollPosition = useSelector((state: StateScheme) => getScrollByPath(state, pathname))
 
+    console.log(scrollPosition + ' scrollposition');
+
 
     useInfiniteScroll({
         triggerRef,
-        wrapperRef,
+        wrapperRef: toggleFeatures({
+            name: 'isAppRedesigned',
+            off: () => wrapperRef,
+            on: () => undefined
+        }),
         callback: onScrollEnd
 
     })
@@ -38,13 +44,13 @@ export const Page = (props: PageProps) => {
         wrapperRef.current.scrollTop = scrollPosition
     })
 
-
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
+
         dispatch(ScrollSaveActions.setScrollPosition({
             position: e.currentTarget.scrollTop,
             path: pathname
         }))
-        console.log('scroll', );
+        console.log('scroll ' + e.currentTarget.scrollTop);
 
     }, 500)
 
@@ -61,6 +67,7 @@ export const Page = (props: PageProps) => {
                 [className]
             )}
             onScroll={onScroll}
+            onClick={onScroll}
             data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}

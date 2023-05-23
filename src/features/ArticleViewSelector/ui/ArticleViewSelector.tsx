@@ -1,9 +1,17 @@
 import { ArticleView } from '@/entities/Article';
-import BlocksIcon from '@/shared/assets/icons/blocks.svg';
-import ListIcon from '@/shared/assets/icons/list.svg';
+import BlocksIconDeprecated from '@/shared/assets/icons/blocks.svg';
+import ListIconDeprecated from '@/shared/assets/icons/list.svg';
+import ListIcon from '@/shared/assets/icons/newList.svg';
+import TilesIcon from '@/shared/assets/icons/newTiles.svg';
+
+
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { Icon } from '@/shared/ui/deprecated/Icon';
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
+import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
+import { Card } from '@/shared/ui/redesign/Card';
+import { Icon } from '@/shared/ui/redesign/Icon';
+import { HStack } from '@/shared/ui/redesign/Stack';
 import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {
@@ -15,11 +23,19 @@ interface ArticleViewSelectorProps {
 const viewTypes = [
     {
         view: ArticleView.BLOCKS,
-        icon: BlocksIcon
+        icon: toggleFeatures({
+            name: 'isAppRedesigned',
+            off: () => BlocksIconDeprecated,
+            on: () => TilesIcon
+        })
     },
     {
         view: ArticleView.LIST,
-        icon: ListIcon
+        icon: toggleFeatures({
+            name: 'isAppRedesigned',
+            off: () => ListIconDeprecated,
+            on: () => ListIcon
+        })
     }
 ]
 
@@ -33,22 +49,45 @@ export const ArticleViewSelector = (props: ArticleViewSelectorProps) => {
     }
 
     return (
-        <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
-            {viewTypes.map(viewType => (
-                <Button
-                    theme={ButtonTheme.CLEAR}
-                    key={viewType.view}
-                    onClick={onClick(viewType.view)}
-                >
-                    <Icon
-                        width={24}
-                        height={24}
-                        Svg={viewType.icon}
-                        className={classNames('', { [cls.selected]: viewType.view === view }, [cls.icons])}
+        <ToggleFeatures
+            feature='isAppRedesigned'
+            off={
+                <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
+                    {viewTypes.map(viewType => (
+                        <ButtonDeprecated
+                            theme={ButtonTheme.CLEAR}
+                            key={viewType.view}
+                            onClick={onClick(viewType.view)}
+                        >
+                            <IconDeprecated
+                                width={24}
+                                height={24}
+                                Svg={viewType.icon}
+                                className={classNames('', { [cls.notSelected]: viewType.view !== view }, [cls.icons])}
 
-                    />
-                </Button>
-            ))}
-        </div>
+                            />
+                        </ButtonDeprecated>
+                    ))}
+                </div>
+            }
+            on={
+                <Card border='round' className={classNames(cls.ArticleViewSelectorRedesigned, {}, [className])}>
+                        <HStack gap='8'>
+                        {viewTypes.map(viewType => (
+                            <Icon
+                                width={24}
+                                height={24}
+                                Svg={viewType.icon}
+                                className={classNames('', { [cls.notSelected]: viewType.view !== view }, [cls.icons])}
+                                clickable
+                                onClick={onClick(viewType.view)}
+                                key={viewType.view}
+                            />
+                        ))}
+                    </HStack>
+                </Card>
+            }
+        />
+
     );
 }
