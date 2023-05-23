@@ -1,10 +1,18 @@
-.NotificationItem,
 .link {
-    width: 100%;
+    width: 95%;
 }
 
 .NotificationItem {
-    box-shadow: 0 0 4px 4px black;
+    box-shadow: 0 2px 1px 1px black;
     width: 95%;
     margin-top: 10px;
+}
+
+.NotificationItem:hover {
+    background: var(--light-bg-redesigned);
+    cursor: pointer;
+}
+
+.link .NotificationItem {
+    width: 100%;
 }

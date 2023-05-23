@@ -1,0 +1,35 @@
+.Card {
+    border-radius: 12px;
+}
+
+.padding-0 {
+    padding: 0;
+}
+
+.padding-8 {
+    padding: 8px;
+}
+
+.padding-16 {
+    padding: 16px;
+}
+
+.padding-24 {
+    padding: 24px;
+}
+
+.normal {
+    background: var(--dark-bg-redesigned);
+}
+
+.light {
+    background: var(--light-bg-redesigned);
+}
+
+.outlined {
+    border: 1px solid var(--accent-redesigned);
+}
+
+.max {
+    width: 100%;
+}

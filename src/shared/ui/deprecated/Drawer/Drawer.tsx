@@ -5,8 +5,8 @@ import {
 } from '@/shared/lib/components/AnimationProvider';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { memo, ReactNode, useCallback, useEffect } from 'react';
-import { Overlay } from '../Overlay/Overlay';
-import { Portal } from '../Portal/Portal';
+import { Overlay } from '../../redesign/Overlay/Overlay';
+import { Portal } from '../../redesign/Portal/Portal';
 import cls from './Drawer.module.scss';
 
 interface DrawerProps {

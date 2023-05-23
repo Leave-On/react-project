@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import React, { FC } from 'react';
+import React, { memo } from 'react';
 import cls from './Icon.module.scss';
 
 type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>
@@ -20,7 +20,7 @@ interface ClickableIconProps extends IconBaseProps {
 
 type IconProps = NonClickableIconProps | ClickableIconProps
 
-export const Icon: FC<IconProps> = (props) => {
+export const Icon = memo((props: IconProps) => {
     const {
         className,
         Svg,
@@ -52,4 +52,4 @@ export const Icon: FC<IconProps> = (props) => {
     }
 
     return icon;
-}
+})

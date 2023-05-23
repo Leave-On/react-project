@@ -661,26 +661,26 @@
     {
       "id": "1",
       "title": "Notification 1",
-      "description": "description",
+      "description": "description1",
       "userId": "2"
     },
     {
       "id": "2",
-      "title": "Notification 1",
-      "description": "description",
+      "title": "Notification 2",
+      "description": "description2",
       "userId": "2"
     },
     {
       "id": "3",
-      "title": "Notification 1",
-      "description": "description",
+      "title": "Notification 3 with link",
+      "description": "go to admin panel page",
       "userId": "1",
       "href": "http://localhost:3000/admin_panel"
     },
     {
       "id": "4",
-      "title": "Notification 1",
-      "description": "description",
+      "title": "Notification 4",
+      "description": "description3",
       "userId": "2"
     }
   ],

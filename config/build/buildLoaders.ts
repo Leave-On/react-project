@@ -12,7 +12,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
             loader: '@svgr/webpack',
             options: {
                 icon: true,
-                svgConfig: {
+                svgoConfig: {
                     plugins: [
                         {
                             name: 'convertColors',
@@ -41,8 +41,8 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const fileLoader = buildFileLoader()
 
     return [
-        svgLoader,
         fileLoader,
+        svgLoader,
         codeBabelLoader,
         tsxCodeBabelLoader,
         // typescriptLoader,
