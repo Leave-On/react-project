@@ -1,7 +1,6 @@
 // import { render, screen } from '@testing-library/react'
 // import { Button, ButtonTheme } from "./Button";
 
-
 // describe('Button', () => {
 //     test('Test render', () => {
 //         render(<Button theme={ButtonTheme.CLEAR}>TEST</Button>);
@@ -15,4 +14,4 @@
 //     })
 
 // })
-export { };
+export {};

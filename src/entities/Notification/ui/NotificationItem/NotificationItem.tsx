@@ -9,36 +9,39 @@ import { Notification } from '../../model/types/notification';
 import cls from './NotificationItem.module.scss';
 
 interface NotificationItemProps {
-   className?: string;
-   item: Notification;
+	className?: string;
+	item: Notification;
 }
 
 export const NotificationItem = memo((props: NotificationItemProps) => {
-    const { className, item } = props;
+	const { className, item } = props;
 
-    const content = (
-        <ToggleFeatures
-            feature='isAppRedesigned'
-            off={
-                <CardDeprecated theme={CardTheme.OUTLINED} className={classNames(cls.NotificationItem, {}, [className])}>
-                    <TextDeprecated title={item.title} text={item.description} />
-                </CardDeprecated >
-            }
-            on={
-                <Card className={classNames(cls.NotificationItem, {}, [className])}>
-                    <Text title={item.title} text={item.description} />
-                </Card >
-            }
-        />
-    )
+	const content = (
+		<ToggleFeatures
+			feature="isAppRedesigned"
+			off={
+				<CardDeprecated
+					theme={CardTheme.OUTLINED}
+					className={classNames(cls.NotificationItem, {}, [className])}
+				>
+					<TextDeprecated title={item.title} text={item.description} />
+				</CardDeprecated>
+			}
+			on={
+				<Card className={classNames(cls.NotificationItem, {}, [className])}>
+					<Text title={item.title} text={item.description} />
+				</Card>
+			}
+		/>
+	);
 
-    if (item.href) {
-        return (
-            <a className={cls.link} target={'blank'} href={item.href}>
-                {content}
-            </a>
-        )
-    }
+	if (item.href) {
+		return (
+			<a className={cls.link} target={'blank'} href={item.href}>
+				{content}
+			</a>
+		);
+	}
 
-    return content
-})
+	return content;
+});

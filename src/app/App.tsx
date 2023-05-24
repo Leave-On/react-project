@@ -29,25 +29,25 @@ const App = () => {
 			feature="isAppRedesigned"
 			off={
 				<div className={classNames('app', {}, [theme])}>
-                    <Suspense fallback="">
-                        <Navbar />
-                        <div className='content-page'>
-                            <Sidebar />
-                            <AppRouter />
-                        </div>
-                    </Suspense>
+					<Suspense fallback="">
+						<Navbar />
+						<div className="content-page">
+							<Sidebar />
+							<AppRouter />
+						</div>
+					</Suspense>
 				</div>
 			}
 			on={
 				<div className={classNames('app_redesigned', {}, [theme])}>
-						<Suspense fallback="">
-                            <MainLayout
-                                header={<Navbar />}
-                                sidebar={<Sidebar />}
-                                content={<AppRouter />}
-                                toolbar={<div></div>}
-                            />
-                        </Suspense>
+					<Suspense fallback="">
+						<MainLayout
+							header={<Navbar />}
+							sidebar={<Sidebar />}
+							content={<AppRouter />}
+							toolbar={<div></div>}
+						/>
+					</Suspense>
 				</div>
 			}
 		/>

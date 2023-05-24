@@ -1,1 +1,1 @@
-export { NotificationsList } from './ui/NotificationsList/NotificationsList'
+export { NotificationsList } from './ui/NotificationsList/NotificationsList';

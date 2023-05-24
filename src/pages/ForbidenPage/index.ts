@@ -1,3 +1,3 @@
-import { default as ForbiddenPage } from './ui/ForbidenPage'
+import { default as ForbiddenPage } from './ui/ForbidenPage';
 
-export { ForbiddenPage as ForbidenPage }
+export { ForbiddenPage as ForbidenPage };

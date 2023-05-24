@@ -5,11 +5,11 @@ import { SortOrder } from '@/shared/types/sort';
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import {
-    getArticlesPageOrder,
-    getArticlesPageSearch,
-    getArticlesPageSort,
-    getArticlesPageType,
-    getArticlesPageView
+	getArticlesPageOrder,
+	getArticlesPageSearch,
+	getArticlesPageSort,
+	getArticlesPageType,
+	getArticlesPageView,
 } from '../../model/selectors/articlePageSelectors';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';

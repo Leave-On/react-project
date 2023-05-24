@@ -1,7 +1,7 @@
-import { StateScheme } from "@/app/providers/StoreProvider";
+import { StateScheme } from '@/app/providers/StoreProvider';
 
-export const getArticleDetailsData = (state: StateScheme) => state.articleDetails?.data
+export const getArticleDetailsData = (state: StateScheme) => state.articleDetails?.data;
 
-export const getArticleDetailsIsLoading = (state: StateScheme) => state.articleDetails?.isLoading
+export const getArticleDetailsIsLoading = (state: StateScheme) => state.articleDetails?.isLoading;
 
-export const getArticleDetailsError = (state: StateScheme) => state.articleDetails?.error
+export const getArticleDetailsError = (state: StateScheme) => state.articleDetails?.error;

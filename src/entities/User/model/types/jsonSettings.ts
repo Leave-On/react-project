@@ -1,6 +1,6 @@
-import { Theme } from "@/shared/const/theme";
+import { Theme } from '@/shared/const/theme';
 
 export interface JsonSettings {
-    theme?: Theme;
-    isFirstVisit?: true;
+	theme?: Theme;
+	isFirstVisit?: true;
 }

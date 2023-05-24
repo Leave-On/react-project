@@ -3,19 +3,13 @@ import { memo } from 'react';
 import { useArticlesFilters } from '../../lib/hooks/useArticlesFilters';
 
 interface ViewSelectorContainerProps {
-   className?: string;
+	className?: string;
 }
 
 export const ViewSelectorContainer = memo((props: ViewSelectorContainerProps) => {
-    const { className } = props;
+	const { className } = props;
 
-    const { view, onViewChange } = useArticlesFilters()
+	const { view, onViewChange } = useArticlesFilters();
 
-    return (
-        <ArticleViewSelector
-            className={className}
-            view={view}
-            onViewClick={onViewChange}
-        />
-    );
-})
+	return <ArticleViewSelector className={className} view={view} onViewClick={onViewChange} />;
+});

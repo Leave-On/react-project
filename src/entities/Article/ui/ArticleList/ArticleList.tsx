@@ -23,13 +23,7 @@ const getSkeletons = (view: ArticleView) => {
 };
 
 export const ArticleList = memo((props: ArticleListProps) => {
-	const {
-		className,
-		articles,
-		isLoading,
-		target,
-		view = ArticleView.BLOCKS,
-	} = props;
+	const { className, articles, isLoading, target, view = ArticleView.BLOCKS } = props;
 	const { t } = useTranslation();
 
 	const renderArticle = (article: Article) => {
@@ -46,11 +40,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
 	if (!isLoading && !articles.length) {
 		return (
-			<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}	>
-				<Text
-					size={TextSize.L}
-					title={t('Articles not found') as string}
-				/>
+			<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+				<Text size={TextSize.L} title={t('Articles not found') as string} />
 			</div>
 		);
 	}

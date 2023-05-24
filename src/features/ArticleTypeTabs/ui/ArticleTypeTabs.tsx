@@ -7,60 +7,64 @@ import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface ArticleTypeTabsProps {
-   className?: string;
-   value: ArticleType;
-   onChangeType: (type: ArticleType) => void
+	className?: string;
+	value: ArticleType;
+	onChangeType: (type: ArticleType) => void;
 }
 
 export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
-    const { className, value, onChangeType } = props;
-    const { t } = useTranslation()
+	const { className, value, onChangeType } = props;
+	const { t } = useTranslation();
 
-    const typeTabs = useMemo<TabItem[]>(() => [
-        {
-            value: ArticleType.ALL,
-            content: t('all') as string
-        },
-        {
-            value: ArticleType.IT,
-            content: t('IT') as string
-        },
-        {
-            value: ArticleType.ECONOMICS,
-            content: t('economics') as string
-        },
-        {
-            value: ArticleType.SCIENCE,
-            content: t('science') as string
-        },
+	const typeTabs = useMemo<TabItem[]>(
+		() => [
+			{
+				value: ArticleType.ALL,
+				content: t('all') as string,
+			},
+			{
+				value: ArticleType.IT,
+				content: t('IT') as string,
+			},
+			{
+				value: ArticleType.ECONOMICS,
+				content: t('economics') as string,
+			},
+			{
+				value: ArticleType.SCIENCE,
+				content: t('science') as string,
+			},
+		],
+		[t],
+	);
 
-    ], [t])
+	const onTabClick = useCallback(
+		(tab: TabItem) => {
+			onChangeType(tab.value as ArticleType);
+		},
+		[onChangeType],
+	);
 
-    const onTabClick = useCallback((tab: TabItem) => {
-        onChangeType(tab.value as ArticleType)
-    }, [onChangeType])
-
-    return (
-        <ToggleFeatures
-            feature='isAppRedesigned'
-            off={
-                <TabsDeprecated
-                    className={classNames('', {}, [className])}
-                    onTabClick={onTabClick}
-                    tabs={typeTabs}
-                    value={value}
-                />
-            }
-            on={
-                <Tabs
-                    className={classNames('', {}, [className])}
-                    onTabClick={onTabClick}
-                    tabs={typeTabs}
-                    value={value}
-                    direction='column'
-                />
-            }
-        />
-
-    );
-})
+	return (
+		<ToggleFeatures
+			feature="isAppRedesigned"
+			off={
+				<TabsDeprecated
+					className={classNames('', {}, [className])}
+					onTabClick={onTabClick}
+					tabs={typeTabs}
+					value={value}
+				/>
+			}
+			on={
+				<Tabs
+					className={classNames('', {}, [className])}
+					onTabClick={onTabClick}
+					tabs={typeTabs}
+					value={value}
+					direction="column"
+				/>
+			}
+		/>
+	);
+});

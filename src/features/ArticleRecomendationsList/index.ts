@@ -1,5 +1,3 @@
-import { ArticleRecomendationsList } from './ui/ArticleRecomendationsList'
+import { ArticleRecomendationsList } from './ui/ArticleRecomendationsList';
 
-export {
-    ArticleRecomendationsList
-}
+export { ArticleRecomendationsList };

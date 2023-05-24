@@ -12,37 +12,30 @@ import { Icon } from '@/shared/ui/redesign/Icon';
 import { memo, useCallback } from 'react';
 
 interface ThemeSwitcherProps {
-  className?: string;
+	className?: string;
 }
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
-    const { theme, toggleTheme } = useTheme()
-    const dispatch = useAppDispatch()
-    const onToggleHandler = useCallback(() => {
-        toggleTheme((newTheme) => {
-            dispatch(saveJsonSettings({theme: newTheme}))
-        })
-    }, [dispatch, toggleTheme])
+	const { theme, toggleTheme } = useTheme();
+	const dispatch = useAppDispatch();
+	const onToggleHandler = useCallback(() => {
+		toggleTheme((newTheme) => {
+			dispatch(saveJsonSettings({ theme: newTheme }));
+		});
+	}, [dispatch, toggleTheme]);
 
-    return (
-        <ToggleFeatures
-            feature='isAppRedesigned'
-            off={
-                <ButtonDeprecated
-                theme={ButtonTheme.OUTLINED}
-                className={classNames('', {}, [className])}
-                onClick={onToggleHandler}
-                >
-                    <IconDeprecated Svg={ThemeIconDeprecated} width={40} height={40} inverted />
-                </ButtonDeprecated>
-            }
-            on={
-                <Icon
-                    Svg={ThemeIcon}
-                    clickable
-                    onClick={onToggleHandler}
-                />
-            }
-        />
-
-    );
-})
+	return (
+		<ToggleFeatures
+			feature="isAppRedesigned"
+			off={
+				<ButtonDeprecated
+					theme={ButtonTheme.OUTLINED}
+					className={classNames('', {}, [className])}
+					onClick={onToggleHandler}
+				>
+					<IconDeprecated Svg={ThemeIconDeprecated} width={40} height={40} inverted />
+				</ButtonDeprecated>
+			}
+			on={<Icon Svg={ThemeIcon} clickable onClick={onToggleHandler} />}
+		/>
+	);
+});

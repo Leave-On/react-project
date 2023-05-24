@@ -1,5 +1,5 @@
-export { AddNewCommentAsync as AddNewComment } from './ui/AddNewComment/AddNewComment.async'
+export { AddNewCommentAsync as AddNewComment } from './ui/AddNewComment/AddNewComment.async';
 
-export type { addNewCommentScheme } from './model/types/addNewComment'
+export type { addNewCommentScheme } from './model/types/addNewComment';
 
-export { addNewCommentReducer } from './model/slices/addNewCommentSlice'
+export { addNewCommentReducer } from './model/slices/addNewCommentSlice';

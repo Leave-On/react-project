@@ -6,20 +6,20 @@ import { Page } from '@/widgets/Page';
 import cls from './ArticleEditPage.module.scss';
 
 interface ArticleEditPageProps {
-   className?: string;
+	className?: string;
 }
 
 const ArticleEditPage = memo((props: ArticleEditPageProps) => {
-    const { className } = props;
-    const { t } = useTranslation()
-    const { id } = useParams<{id: string}>()
-    const isEdit = Boolean(id)
+	const { className } = props;
+	const { t } = useTranslation();
+	const { id } = useParams<{ id: string }>();
+	const isEdit = Boolean(id);
 
-    return (
-        <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
-            {isEdit ? t('Edit') + id : t('Create')}
-        </Page>
-    );
-})
+	return (
+		<Page className={classNames(cls.ArticleEditPage, {}, [className])}>
+			{isEdit ? t('Edit') + id : t('Create')}
+		</Page>
+	);
+});
 
-export default ArticleEditPage
+export default ArticleEditPage;

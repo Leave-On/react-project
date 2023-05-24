@@ -5,18 +5,18 @@ import { HStack } from '../../redesign/Stack';
 import cls from './AppLogo.module.scss';
 
 interface AppLogoProps {
-   className?: string;
-   size?: number;
+	className?: string;
+	size?: number;
 }
 
 export const AppLogo = memo((props: AppLogoProps) => {
-    const { className, size } = props;
+	const { className, size } = props;
 
-    return (
-        <HStack max justify='center' className={classNames(cls.AppLogo, {}, [className])}>
-            <div className={cls.gradientBig} ></div>
-            <div className={cls.gradientSmall} ></div>
-            <AppSvg  width={size} height={size} color={'black'} />
-        </HStack>
-    );
-})
+	return (
+		<HStack max justify="center" className={classNames(cls.AppLogo, {}, [className])}>
+			<div className={cls.gradientBig}></div>
+			<div className={cls.gradientSmall}></div>
+			<AppSvg width={size} height={size} color={'black'} />
+		</HStack>
+	);
+});

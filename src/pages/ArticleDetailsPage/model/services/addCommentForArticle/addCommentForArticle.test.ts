@@ -1,3 +1,3 @@
 export interface Test5 {
-    id: string
+	id: string;
 }

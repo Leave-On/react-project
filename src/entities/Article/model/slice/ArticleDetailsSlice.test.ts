@@ -2,7 +2,6 @@
 // import { ArticleDetailsScheme } from "../types/ArticleDetailsScheme"
 // import { ArticleDetailsActions, ArticleDetailsReducer } from "./ArticleDetailsSlice"
 
-
 // const article: Article = {
 //     "id": "1",
 //     "title": "Javascript news",
@@ -85,5 +84,5 @@
 // })
 
 export interface Test2 {
-    id: string
+	id: string;
 }

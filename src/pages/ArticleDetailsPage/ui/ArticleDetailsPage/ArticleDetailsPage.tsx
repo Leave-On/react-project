@@ -4,7 +4,7 @@ import { ArticleRecomendationsList } from '@/features/ArticleRecomendationsList'
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
 	DynamicModuleLoader,
-	ReducerList
+	ReducerList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/deprecated/Card';
@@ -48,7 +48,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 					<ArticleDetailsHeader />
 					<ArticleDetails articleId={id} />
 					<ToggleFeatures
-						feature='isArticleRatingEnabled'
+						feature="isArticleRatingEnabled"
 						on={<ArticleRating articleId={id} />}
 						off={<Card>{t('Article rating will be available soon')}</Card>}
 					/>

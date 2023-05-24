@@ -1,6 +1,5 @@
-
 const JestEmptyComponent = function () {
-    return <div />
-}
+	return <div />;
+};
 
 export default JestEmptyComponent;

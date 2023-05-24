@@ -8,18 +8,16 @@ export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(
 	'user/initAuthData',
 	async (newJsonSettings, thunkApi) => {
 		const { rejectWithValue, dispatch } = thunkApi;
-        const userId = localStorage.getItem(USER_LOCALSTORAGE_KEY)
+		const userId = localStorage.getItem(USER_LOCALSTORAGE_KEY);
 
 		if (!userId) {
 			return rejectWithValue('no user');
 		}
 
 		try {
-			const response = await dispatch(
-				getUserDataByIdQuery(userId)
-			).unwrap();
+			const response = await dispatch(getUserDataByIdQuery(userId)).unwrap();
 
-			return response
+			return response;
 		} catch (e) {
 			console.log(e);
 			return rejectWithValue('Error when saving json settings');

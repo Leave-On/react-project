@@ -4,23 +4,22 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets/Page';
 
 interface ProfilePageProps {
-  className?: string;
+	className?: string;
 }
-
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
-    const { id } = useParams<{ id: string }>()
+	const { id } = useParams<{ id: string }>();
 
-    if (!id) {
-        return null
-    }
+	if (!id) {
+		return null;
+	}
 
-    return (
-        <Page data-testid="ProfilePage" className={classNames('', {}, [className])}>
-            {/* <ProfileRating profileId={id} /> */}
-            <EditableProfileCard id={id}/>
-        </Page>
-    );
-}
+	return (
+		<Page data-testid="ProfilePage" className={classNames('', {}, [className])}>
+			{/* <ProfileRating profileId={id} /> */}
+			<EditableProfileCard id={id} />
+		</Page>
+	);
+};
 
-export default ProfilePage
+export default ProfilePage;

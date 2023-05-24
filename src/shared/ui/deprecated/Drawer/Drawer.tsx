@@ -1,8 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import {
-	AnimationProvider,
-	useAnimationLibs
-} from '@/shared/lib/components/AnimationProvider';
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { memo, ReactNode, useCallback, useEffect } from 'react';
 import { Overlay } from '../../redesign/Overlay/Overlay';
@@ -47,13 +44,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
 	};
 
 	const bind = Gesture.useDrag(
-		({
-			last,
-			velocity: [, vy],
-			direction: [, dy],
-			movement: [, my],
-			cancel,
-		}) => {
+		({ last, velocity: [, vy], direction: [, dy], movement: [, my], cancel }) => {
 			if (my < -70) cancel();
 
 			if (last) {
@@ -82,13 +73,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
 
 	return (
 		<Portal>
-			<div
-				className={classNames(cls.Drawer, {}, [
-					className,
-					theme,
-					'app_drawer',
-				])}
-			>
+			<div className={classNames(cls.Drawer, {}, [className, theme, 'app_drawer'])}>
 				<Overlay onClick={close} />
 				<Spring.a.div
 					className={cls.sheet}

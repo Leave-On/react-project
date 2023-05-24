@@ -28,10 +28,14 @@
     "prepare": "husky install",
     "chromatic": "npx chromatic --project-token=bf7b17a3c3c3",
     "postinstall": "node ./scripts/clear-cache.js",
-    "remove-feature": "npx ts-node ./scripts/remove-feature.ts"
+    "remove-feature": "npx ts-node ./scripts/remove-feature.ts",
+    "prettier": "npx prettier --write **/*.{ts,tsx,json}"
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": "eslint --fix"
+    "**/*.{ts,tsx}": [
+      "prettier --list-different",
+      "eslint --fix"
+    ]
   },
   "keywords": [],
   "author": "",
