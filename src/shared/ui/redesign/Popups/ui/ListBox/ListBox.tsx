@@ -1,3 +1,4 @@
+import ArrowIcon from '@/shared/assets/icons/arrow.svg'
 import DoneIcon from '@/shared/assets/icons/done.svg'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { DropdownDirection } from '@/shared/types/ui'
@@ -59,7 +60,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                 disabled={readonly}
             >
                 <HListBox.Button className={popupCls.trigger}>
-                    <Button variant='filled' disabled={readonly}>
+                    <Button variant='filled' disabled={readonly} addonRight={<Icon Svg={ArrowIcon} />}>
                         {selectedItem?.content ?? defaultValue}
                     </Button>
                 </HListBox.Button>
